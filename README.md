@@ -1,6 +1,6 @@
 # Movies_API_Pedro_Javi
 ## Colaboradores
-Los creadores de este proyecto son Pedro Franch Erraiz y Javier Prieto Ortiz
+Los creadores de este proyecto son Pedro Franch Echaniz y Javier Prieto Ortiz
 ## Como Iniciar el proyecto
 > Para iniciar el proyecto debes tener instalado angular, sino lo tienes instalado puedes hacerlo con `npm i @angular/cli`
 
