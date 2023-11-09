@@ -13,17 +13,17 @@ import { UserPageComponent } from './ui/user-page/user-page.component';
 import { CollectionPageComponent } from './ui/collection-page/collection-page.component';
 
 const routes: Routes = [
-  
-  {path:"series", component:SerieListPageComponent},
-  {path:"series/:id", component:SerieDetailsPageComponent},
-  {path:"movies", component:MovieListPageComponent},
-  {path:"movies/:id", component:MovieDetailsPageComponent},
-  {path:"people", component:PeopleListPageComponent},
-  {path:"people/:id", component:PeopleDetailsPageComponent},
-  {path:"user/:id", component:UserPageComponent},
-  {path:"collection/:id", component:CollectionPageComponent},
-  {path:"", pathMatch:"full",component:HomePageComponent},
-  {path: '**', component:NotFoundPageComponent}
+
+  { path: "series", component: SerieListPageComponent },
+  { path: "series/:id", component: SerieDetailsPageComponent },
+  { path: "movies", component: MovieListPageComponent },
+  { path: "movies/:id", component: MovieDetailsPageComponent },
+  { path: "people", component: PeopleListPageComponent },
+  { path: "people/:id", component: PeopleDetailsPageComponent },
+  { path: "user/:id", component: UserPageComponent },
+  { path: "collection/:id", component: CollectionPageComponent },
+  { path: "", pathMatch: "full", component: HomePageComponent },
+  { path: '**', component: NotFoundPageComponent }
 ];
 
 @NgModule({
