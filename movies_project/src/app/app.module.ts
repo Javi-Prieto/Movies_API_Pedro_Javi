@@ -4,11 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { PageNotFoundComponent } from './ui/page-not-found/page-not-found.component';
-import { HomePageComponent } from './ui/home-page/home-page.component';
-import { SeriesPageComponent } from './ui/series-page/series-page.component';
-import { ListPageComponent } from './ui/series/list-page/list-page.component';
-import { DetailsPageComponent } from './ui/series/details-page/details-page.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { MovieItemComponent } from './components/movie-item/movie-item.component';
 import { SerieItemComponent } from './components/serie-item/serie-item.component';
@@ -18,7 +13,6 @@ import { PeopleListComponent } from './components/people-list/people-list.compon
 import { PeopleItemComponent } from './components/people-item/people-item.component';
 import { RatingItemComponent } from './components/rating-item/rating-item.component';
 import { FavouriteItemComponent } from './components/favourite-item/favourite-item.component';
-import { CollectioItemComponent } from './components/collectio-item/collectio-item.component';
 import { MovieListPageComponent } from './ui/movie-list-page/movie-list-page.component';
 import { SerieListPageComponent } from './ui/serie-list-page/serie-list-page.component';
 import { PeopleListPageComponent } from './ui/people-list-page/people-list-page.component';
@@ -33,11 +27,6 @@ import { CollectionItemComponent } from './components/collection-item/collection
 @NgModule({
   declarations: [
     AppComponent,
-    PageNotFoundComponent,
-    HomePageComponent,
-    SeriesPageComponent,
-    ListPageComponent,
-    DetailsPageComponent,
     NavBarComponent,
     MovieItemComponent,
     SerieItemComponent,
@@ -47,7 +36,6 @@ import { CollectionItemComponent } from './components/collection-item/collection
     PeopleItemComponent,
     RatingItemComponent,
     FavouriteItemComponent,
-    CollectioItemComponent,
     MovieListPageComponent,
     SerieListPageComponent,
     PeopleListPageComponent,
