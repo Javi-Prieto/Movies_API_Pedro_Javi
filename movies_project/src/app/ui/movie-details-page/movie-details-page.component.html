@@ -29,10 +29,17 @@
                     <p class="fs-5 m-0">{{movie?.overview}}</p>
                     <p class="text-white-50 fst-italic fs-3" >"{{movie?.tagline}}"</p>
                 </div>
+                <div class="col-12" *ngIf="movie?.belongs_to_collection">
+                    <h1 class="h1 fw-bold">Collection</h1>
+                    <div class="rounded-3 " [style]="setBackCollectionUrl()" id="collectionButton">
+                        <div class="row h-100 w-100 bg-black-50 rounded-3">
+                            <div class="col-8 mt-2 align-items-middle display-4">{{movie?.belongs_to_collection?.name}}</div>
+                            <div class="col-4 rounded button btn bg-warning p-2 w-25 h-25 align-self-center fw-bold" [routerLink]="['/collection/', movie?.belongs_to_collection?.id]">See Full Collection</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="vertical-line col-1 mt-5">
-
-            </div>
+            <div class="vertical-line col-1 mt-5"></div>
             <div class="col-3 mt-5">
                 <h2 class="h2 fw-bold">Rating</h2>
                 <div></div>
