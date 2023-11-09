@@ -23,6 +23,7 @@ import { CollectionPageComponent } from './ui/collection-page/collection-page.co
 import { UserPageComponent } from './ui/user-page/user-page.component';
 import { NotFoundPageComponent } from './ui/not-found-page/not-found-page.component';
 import { CollectionItemComponent } from './components/collection-item/collection-item.component';
+import { MovieRatedListComponent } from './components/movie-rated-list/movie-rated-list.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { CollectionItemComponent } from './components/collection-item/collection
     CollectionPageComponent,
     UserPageComponent,
     NotFoundPageComponent,
-    CollectionItemComponent
+    CollectionItemComponent,
+    MovieRatedListComponent
   ],
   imports: [
     BrowserModule,

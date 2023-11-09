@@ -19,4 +19,8 @@ export class MovieService {
   getMovieDetails(id:number):Observable<MovieDetailsResponse>{
     return this.http.get<MovieDetailsResponse>(`${environment.baseUrl}/movie/${id}?${environment.apiKey}`);
   }
+
+  getRatedMovieList():Observable<MoviePopularListResponse>{
+    return this.http.get<MoviePopularListResponse>(`${environment.baseUrl}/movie/top_rated?${environment.apiKey}`)
+  }
 }
