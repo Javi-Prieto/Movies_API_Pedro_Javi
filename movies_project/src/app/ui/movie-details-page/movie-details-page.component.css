@@ -1,0 +1,13 @@
+.bg{
+    background-size: 122%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+.vertical-line{
+    border-left: 2px solid #5000B9;
+    height: 500px;
+    margin: 0 ;
+}
+img{
+    box-shadow: rgb(187, 187, 187) 0px 0px 7px;
+}
