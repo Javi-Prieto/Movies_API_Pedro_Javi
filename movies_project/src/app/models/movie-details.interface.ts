@@ -3,7 +3,7 @@
 export interface MovieDetailsResponse {
     adult:                 boolean;
     backdrop_path:         string;
-    belongs_to_collection: null;
+    belongs_to_collection: BelongsToCollection;
     budget:                number;
     genres:                Genre[];
     homepage:              string;
@@ -28,6 +28,13 @@ export interface MovieDetailsResponse {
     vote_count:            number;
 }
 
+export interface BelongsToCollection {
+    id:            number;
+    name:          string;
+    poster_path:   string;
+    backdrop_path: string;
+}
+
 export interface Genre {
     id:   number;
     name: string;
@@ -35,7 +42,7 @@ export interface Genre {
 
 export interface ProductionCompany {
     id:             number;
-    logo_path:      null;
+    logo_path:      null | string;
     name:           string;
     origin_country: string;
 }
@@ -50,3 +57,4 @@ export interface SpokenLanguage {
     iso_639_1:    string;
     name:         string;
 }
+
