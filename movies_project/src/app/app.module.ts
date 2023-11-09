@@ -27,6 +27,8 @@ import { SerieDetailsPageComponent } from './ui/serie-details-page/serie-details
 import { PeopleDetailsPageComponent } from './ui/people-details-page/people-details-page.component';
 import { CollectionPageComponent } from './ui/collection-page/collection-page.component';
 import { UserPageComponent } from './ui/user-page/user-page.component';
+import { NotFoundPageComponent } from './ui/not-found-page/not-found-page.component';
+import { CollectionItemComponent } from './components/collection-item/collection-item.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,9 @@ import { UserPageComponent } from './ui/user-page/user-page.component';
     SerieDetailsPageComponent,
     PeopleDetailsPageComponent,
     CollectionPageComponent,
-    UserPageComponent
+    UserPageComponent,
+    NotFoundPageComponent,
+    CollectionItemComponent
   ],
   imports: [
     BrowserModule,
