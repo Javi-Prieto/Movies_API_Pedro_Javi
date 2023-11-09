@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { MoviePopularListResponse } from '../models/movie-popular-list.interface';
 import { environment } from 'src/environments/environment.development';
 import { MovieDetailsResponse } from '../models/movie-details.interface';
+import { CreditsResponse } from '../models/credits-details.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -18,5 +19,9 @@ export class MovieService {
 
   getMovieDetails(id:number):Observable<MovieDetailsResponse>{
     return this.http.get<MovieDetailsResponse>(`${environment.baseUrl}/movie/${id}?${environment.apiKey}`);
+  }
+
+  getCredits(id:number):Observable<CreditsResponse>{
+    return this.http.get<CreditsResponse>(`${environment.baseUrl}/movie/${id}/credits?${environment.apiKey}`);
   }
 }
