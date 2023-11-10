@@ -19,6 +19,7 @@ export class MovieDetailsPageComponent implements OnInit{
   movieId: number = 0;
   bgImage: string = '';
   cast!: Cast[];
+  crew !: Cast[]; 
 
 
   constructor(private movieService: MovieService){
@@ -29,7 +30,10 @@ export class MovieDetailsPageComponent implements OnInit{
       this.movie = resp;
       this.bgImage = `url(${environment.imageBackgroundBaseUrl}${this.movie.backdrop_path})`;
     });
-    this.movieService.getCredits(this.movieId).subscribe(resp => this.cast = resp.cast);
+    this.movieService.getCredits(this.movieId).subscribe(resp => {
+      this.cast = resp.cast;
+      this.crew = resp.crew;
+    });
   }
   setImgUrl():string{
     return `${environment.posterImageBaseUrl}${this.movie?.poster_path}`;
@@ -39,6 +43,9 @@ export class MovieDetailsPageComponent implements OnInit{
   }
   getActorsList():Cast[]{
     return this.cast.filter(people => people.known_for_department == 'Acting')
+  }
+  getDirectorsList():Cast[]{
+    return this.crew.filter(people => people.known_for_department == 'Directing');
   }
 
   setActorImageUrl(actor:Cast):string {
