@@ -2,8 +2,10 @@ import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Cast } from 'src/app/models/credits-details.interface';
 import { MovieDetailsResponse } from 'src/app/models/movie-details.interface';
+import { Trailer } from 'src/app/models/movie-trailers.interface';
 import { MovieService } from 'src/app/services/movie.service';
 import { environment } from 'src/environments/environment.development';
+import { DomSanitizer } from '@angular/platform-browser'
 
 @Component({
   selector: 'app-movie-details-page',
@@ -20,11 +22,13 @@ export class MovieDetailsPageComponent implements OnInit{
   bgImage: string = '';
   cast!: Cast[];
   crew !: Cast[]; 
+  trailer !: Trailer;
 
 
-  constructor(private movieService: MovieService){
-    this.movieId = Number(this.route.snapshot.params['id']);
+  constructor(private movieService: MovieService,  private _sanitizer: DomSanitizer){
+    this.movieId = this.route.snapshot.params['id'];
   }
+
   ngOnInit(): void {
     this.movieService.getMovieDetails(this.movieId).subscribe(resp => {
       this.movie = resp;
@@ -33,6 +37,9 @@ export class MovieDetailsPageComponent implements OnInit{
     this.movieService.getCredits(this.movieId).subscribe(resp => {
       this.cast = resp.cast;
       this.crew = resp.crew;
+    });
+    this.movieService.getTrailers(this.movieId).subscribe(resp => {
+      this.trailer = resp.results.filter(video => video.type == 'Trailer')[0];
     });
   }
   setImgUrl():string{
@@ -51,5 +58,7 @@ export class MovieDetailsPageComponent implements OnInit{
   setActorImageUrl(actor:Cast):string {
     return `${environment.actorImageBaseUrl}${actor.profile_path}`;
   }
-
+  setVideoUrl(trailer:Trailer):any{
+    return this._sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${trailer.key}`);
+  }
 }

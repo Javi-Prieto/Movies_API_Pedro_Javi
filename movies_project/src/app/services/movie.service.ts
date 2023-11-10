@@ -5,6 +5,7 @@ import { MoviePopularListResponse } from '../models/movie-popular-list.interface
 import { environment } from 'src/environments/environment.development';
 import { MovieDetailsResponse } from '../models/movie-details.interface';
 import { CreditsResponse } from '../models/credits-details.interface';
+import { MovieTrailersResponse } from '../models/movie-trailers.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +24,9 @@ export class MovieService {
 
   getCredits(id:number):Observable<CreditsResponse>{
     return this.http.get<CreditsResponse>(`${environment.baseUrl}/movie/${id}/credits?${environment.apiKey}`);
+  }
+
+  getTrailers(id:number):Observable<MovieTrailersResponse>{
+    return this.http.get<MovieTrailersResponse>(`${environment.baseUrl}/movie/${id}/videos?${environment.apiKey}`);
   }
 }
