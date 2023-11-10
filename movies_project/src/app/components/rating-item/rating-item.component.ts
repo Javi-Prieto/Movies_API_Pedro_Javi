@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-rating-item',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./rating-item.component.css']
 })
 export class RatingItemComponent {
-
+  @Input() average : number | undefined;
 }

@@ -24,6 +24,9 @@ import { UserPageComponent } from './ui/user-page/user-page.component';
 import { NotFoundPageComponent } from './ui/not-found-page/not-found-page.component';
 import { CollectionItemComponent } from './components/collection-item/collection-item.component';
 
+
+import { NgCircleProgressModule } from 'ng-circle-progress';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +54,15 @@ import { CollectionItemComponent } from './components/collection-item/collection
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    NgCircleProgressModule.forRoot({
+      radius: 25,
+      outerStrokeWidth: 10,
+      innerStrokeWidth: 2,
+      outerStrokeColor: "#5000B9",
+      innerStrokeColor: "#111111",
+      backgroundColor: "#000000",
+      animationDuration: 300,
+    }),
     HttpClientModule
   ],
   providers: [],

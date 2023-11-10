@@ -55,8 +55,11 @@
             <div class="vertical-line col-1 mt-5"></div>
             <div class="col-3 mt-5">
                 <h2 class="h2 fw-bold">Rating</h2>
-                <div></div>
+                <div>
+                    <app-rating-item [average]="movie?.vote_average"></app-rating-item>
+                </div>
                 <h2 class="h2 fw-bold">Directors</h2>
+                <p class="text-white "><span *ngFor="let director of getDirectorsList()">{{director.name}} | </span>  </p>
             </div>
 
         </div>
