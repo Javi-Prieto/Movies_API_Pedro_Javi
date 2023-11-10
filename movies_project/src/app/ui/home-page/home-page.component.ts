@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { MovieRatedListComponent } from 'src/app/components/movie-rated-list/movie-rated-list.component';
 
 
 @Component({

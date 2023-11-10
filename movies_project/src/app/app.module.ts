@@ -24,6 +24,8 @@ import { UserPageComponent } from './ui/user-page/user-page.component';
 import { NotFoundPageComponent } from './ui/not-found-page/not-found-page.component';
 import { CollectionItemComponent } from './components/collection-item/collection-item.component';
 import { MovieRatedListComponent } from './components/movie-rated-list/movie-rated-list.component';
+import { CommonModule } from '@angular/common';
+import { HomePageComponent } from './ui/home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -47,10 +49,12 @@ import { MovieRatedListComponent } from './components/movie-rated-list/movie-rat
     UserPageComponent,
     NotFoundPageComponent,
     CollectionItemComponent,
-    MovieRatedListComponent
+    MovieRatedListComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule

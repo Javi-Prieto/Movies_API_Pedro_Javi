@@ -7,14 +7,14 @@ import { RatedFilm } from 'src/app/models/movie-rated-list.interface';
   templateUrl: './movie-rated-list.component.html',
   styleUrls: ['./movie-rated-list.component.css']
 })
-export class MovieRatedListComponent {
+export class MovieRatedListComponent implements OnInit {
 
   ratedFilmList: RatedFilm[] = [];
 
-  constructor(private movieService: MovieService ){}
- 
-  ngOnInit(): void{
-    this.movieService.getRatedMovieList().subscribe(resp =>{
+  constructor(private movieService: MovieService) { }
+
+  ngOnInit(): void {
+    this.movieService.getRatedMovieList().subscribe(resp => {
       this.ratedFilmList = resp.results;
     })
   }
