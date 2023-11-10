@@ -12,15 +12,15 @@ export class MovieService {
 
   constructor(private http: HttpClient) { }
 
-  getPopularMovieList():Observable<MoviePopularListResponse>{
+  getPopularMovieList(): Observable<MoviePopularListResponse> {
     return this.http.get<MoviePopularListResponse>(`${environment.baseUrl}/movie/popular?${environment.apiKey}`);
   }
 
-  getMovieDetails(id:number):Observable<MovieDetailsResponse>{
+  getMovieDetails(id: number): Observable<MovieDetailsResponse> {
     return this.http.get<MovieDetailsResponse>(`${environment.baseUrl}/movie/${id}?${environment.apiKey}`);
   }
 
-  getRatedMovieList():Observable<MoviePopularListResponse>{
-    return this.http.get<MoviePopularListResponse>(`${environment.baseUrl}/movie/top_rated?${environment.apiKey}`)
+  getRatedMovieList(): Observable<MoviePopularListResponse> {
+    return this.http.get<MoviePopularListResponse>(`${environment.baseUrl}/movie/top_rated?limit=10&&${environment.apiKey}`)
   }
 }

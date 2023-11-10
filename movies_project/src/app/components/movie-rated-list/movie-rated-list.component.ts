@@ -15,7 +15,7 @@ export class MovieRatedListComponent implements OnInit {
 
   ngOnInit(): void {
     this.movieService.getRatedMovieList().subscribe(resp => {
-      this.ratedFilmList = resp.results;
+      this.ratedFilmList = resp.results
     })
   }
 }

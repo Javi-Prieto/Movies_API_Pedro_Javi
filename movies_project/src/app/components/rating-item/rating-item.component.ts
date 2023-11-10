@@ -10,8 +10,9 @@ import { environment } from 'src/environments/environment.development';
 export class RatingItemComponent {
 
   @Input() filmRated!: RatedFilm;
+  @Input() index!: number;
 
-  getImg(){
+  getImg() {
     return `${environment.posterImageBaseUrl}${this.filmRated.poster_path}`;
   }
 

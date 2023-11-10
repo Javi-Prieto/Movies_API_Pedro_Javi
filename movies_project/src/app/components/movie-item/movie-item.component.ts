@@ -9,7 +9,8 @@ import { environment } from 'src/environments/environment.development';
 export class MovieItemComponent {
 
   @Input() movie!: PopularMovie;
-  setPosterUrl():string {
+
+  setPosterUrl(): string {
     return `${environment.posterImageBaseUrl}${this.movie.poster_path}`;
   }
 
