@@ -23,6 +23,9 @@ import { CollectionPageComponent } from './ui/collection-page/collection-page.co
 import { UserPageComponent } from './ui/user-page/user-page.component';
 import { NotFoundPageComponent } from './ui/not-found-page/not-found-page.component';
 import { CollectionItemComponent } from './components/collection-item/collection-item.component';
+import { MovieRatedListComponent } from './components/movie-rated-list/movie-rated-list.component';
+import { CommonModule } from '@angular/common';
+import { HomePageComponent } from './ui/home-page/home-page.component';
 
 
 import { NgCircleProgressModule } from 'ng-circle-progress';
@@ -48,10 +51,13 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     CollectionPageComponent,
     UserPageComponent,
     NotFoundPageComponent,
-    CollectionItemComponent
+    CollectionItemComponent,
+    MovieRatedListComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     NgbModule,
     NgCircleProgressModule.forRoot({
