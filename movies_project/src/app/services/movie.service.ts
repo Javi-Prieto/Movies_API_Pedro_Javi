@@ -39,7 +39,7 @@ export class MovieService {
 
   getPlayNowFilms(): Observable<MoviePlayNowResponse>{
     return this.http.get<MoviePlayNowResponse>(`${environment.baseUrl}/movie/now_playing?${environment.apiKey}`)
-  }
+  }  
 
   getImages(id:number):Observable<MovieImagesResponse>{
     return this.http.get<MovieImagesResponse>(`${environment.baseUrl}/movie/${id}/images?${environment.apiKey}`)
