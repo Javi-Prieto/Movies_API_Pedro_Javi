@@ -1,0 +1,26 @@
+.list{
+    background-color: black;
+}
+
+.custom-scrollbar{
+    background-color: black;
+    scrollbar-color: #5000B9;
+    scrollbar-width: thin;   
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    /* Cambia el color de fondo a negro */
+    background-color: black;
+    /* Cambia el grosor de la barra de desplazamiento */
+    width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    /* Cambia el color de la barra de desplazamiento a morado */
+    background-color: #5000B9;
+}
+
+.custom-scrollbar::-webkit-scrollbar:hover {
+    /* Cambia el color de la barra de desplazamiento a un tono más claro al pasar el cursor sobre ella */
+    background-color: rgb(157, 104, 157);
+}
