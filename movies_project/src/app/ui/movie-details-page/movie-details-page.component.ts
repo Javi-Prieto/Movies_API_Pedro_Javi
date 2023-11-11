@@ -6,6 +6,7 @@ import { Trailer } from 'src/app/models/movie-trailers.interface';
 import { MovieService } from 'src/app/services/movie.service';
 import { environment } from 'src/environments/environment.development';
 import { DomSanitizer } from '@angular/platform-browser'
+import { Image } from 'src/app/models/movie-images.interface';
 
 @Component({
   selector: 'app-movie-details-page',
@@ -23,6 +24,7 @@ export class MovieDetailsPageComponent implements OnInit{
   cast!: Cast[];
   crew !: Cast[]; 
   trailer !: Trailer;
+  carouselImages !: Image[];
 
 
   constructor(private movieService: MovieService,  private _sanitizer: DomSanitizer){
@@ -41,8 +43,11 @@ export class MovieDetailsPageComponent implements OnInit{
     this.movieService.getTrailers(this.movieId).subscribe(resp => {
       this.trailer = resp.results.filter(video => video.type == 'Trailer')[0];
     });
+    this.movieService.getImages(this.movieId).subscribe(resp => {
+      this.carouselImages = resp.backdrops;
+    });
   }
-  setImgUrl():string{
+  setPosterImgUrl():string{
     return `${environment.posterImageBaseUrl}${this.movie?.poster_path}`;
   }
   setBackCollectionUrl():string {
@@ -54,7 +59,9 @@ export class MovieDetailsPageComponent implements OnInit{
   getDirectorsList():Cast[]{
     return this.crew.filter(people => people.known_for_department == 'Directing');
   }
-
+  setBgImagesList():string[]{
+    return this.carouselImages.map(img => {return `${environment.bgShortImageUrl}${img.file_path}`;});
+  }
   setActorImageUrl(actor:Cast):string {
     return `${environment.actorImageBaseUrl}${actor.profile_path}`;
   }

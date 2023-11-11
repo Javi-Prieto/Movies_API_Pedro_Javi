@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment.development';
 import { MovieDetailsResponse } from '../models/movie-details.interface';
 import { CreditsResponse } from '../models/credits-details.interface';
 import { MovieTrailersResponse } from '../models/movie-trailers.interface';
+import { MovieImagesResponse } from '../models/movie-images.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -28,5 +29,14 @@ export class MovieService {
 
   getTrailers(id:number):Observable<MovieTrailersResponse>{
     return this.http.get<MovieTrailersResponse>(`${environment.baseUrl}/movie/${id}/videos?${environment.apiKey}`);
+  }
+
+
+
+
+
+
+  getImages(id:number):Observable<MovieImagesResponse>{
+    return this.http.get<MovieImagesResponse>(`${environment.baseUrl}/movie/${id}/images?${environment.apiKey}`)
   }
 }
