@@ -26,10 +26,9 @@ export class MovieService {
 
   getRatedMovieList(): Observable<MoviePopularListResponse> {
     return this.http.get<MoviePopularListResponse>(`${environment.baseUrl}/movie/top_rated?limit=10&&${environment.apiKey}`)
-
+  }
   getCredits(id:number):Observable<CreditsResponse>{
     return this.http.get<CreditsResponse>(`${environment.baseUrl}/movie/${id}/credits?${environment.apiKey}`);
-
   }
 
   getTrailers(id:number):Observable<MovieTrailersResponse>{

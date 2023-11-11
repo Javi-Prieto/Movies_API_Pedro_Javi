@@ -58,12 +58,15 @@
                 <div>
                     <app-rating-item [average]="movie?.vote_average"></app-rating-item>
                 </div>
+                
                 <h2 class="h2 fw-bold">Directors</h2>
                 <p class="text-white "><span *ngFor="let director of getDirectorsList()">{{director.name}} | </span>  </p>
+                
                 <h2 class="h2 fw-bold">Trailer</h2>
-                <iframe width="560" height="315" [src]="setVideoUrl(trailer)" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="560" height="315" [src]="setVideoUrl(trailer)" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                
                 <h2 class="h2 fw-bold">Images</h2>
-                <ngb-carousel *ngIf="carouselImages" [pauseOnHover]="true" [interval]="1000" >
+                <ngb-carousel *ngIf="carouselImages"   >
                     <ng-template ngbSlide *ngFor="let url of setBgImagesList()" >
                         <div class="picsum-img-wrapper " >
                             <img  [src]="url" alt="Random first slide" class="w-100" />

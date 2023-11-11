@@ -1,14 +1,4 @@
 
-<div class="card ms-5" style="width: 16rem; height: 500px">
-  <div class="card-img-overlay d-flex justify-content-center align-items-center">
-    <span class="index-overlay">{{index + 1}}</span>
-  </div>
-  <img [src]="getImg()" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title overflow">{{filmRated.title}}</h5>
-  </div>
-</div>
-
 <circle-progress [percent]="average! * 10" [radius]="50" [imageWidth]="5" [animation]="true"
         [animationDuration]="300" subtitle="vote average" titleColor="#FFFFFF"></circle-progress>
 

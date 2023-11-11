@@ -1,0 +1,9 @@
+<div class="card ms-5" style="width: 16rem; height: 500px" [routerLink]="['/movies', filmRated.id]">
+    <div class="card-img-overlay d-flex justify-content-center align-items-center">
+      <span class="index-overlay">{{index + 1}}</span>
+    </div>
+    <img [src]="getImg()" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title overflow">{{filmRated.title}}</h5>
+    </div>
+  </div>
