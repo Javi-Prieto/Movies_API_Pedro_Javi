@@ -29,6 +29,7 @@ import { HomePageComponent } from './ui/home-page/home-page.component';
 
 
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { PopularMovieItemComponent } from './components/popular-movie-item/popular-movie-item.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     NotFoundPageComponent,
     CollectionItemComponent,
     MovieRatedListComponent,
-    HomePageComponent
+    HomePageComponent,
+    PopularMovieItemComponent
   ],
   imports: [
     BrowserModule,
