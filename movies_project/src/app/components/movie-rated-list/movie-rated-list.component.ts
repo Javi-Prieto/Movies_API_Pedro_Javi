@@ -11,11 +11,13 @@ export class MovieRatedListComponent implements OnInit {
 
   ratedFilmList: RatedFilm[] = [];
 
-  constructor(private movieService: MovieService) { }
+  constructor(private movieService: MovieService) {}
 
   ngOnInit(): void {
     this.movieService.getRatedMovieList().subscribe(resp => {
-      this.ratedFilmList = resp.results
+      this.ratedFilmList = resp.results.slice(0,10);
     })
   }
+
+  
 }
