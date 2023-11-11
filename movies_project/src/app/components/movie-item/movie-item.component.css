@@ -2,5 +2,5 @@
     cursor: pointer;
 }
 .card:hover{
-    box-shadow: black 10px 10px;
+    box-shadow: grey 10px 10px 10px;
 }

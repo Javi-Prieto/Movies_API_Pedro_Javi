@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PopularMovie } from 'src/app/models/movie-popular-list.interface';
 import { MovieService } from 'src/app/services/movie.service';
 
@@ -7,7 +7,7 @@ import { MovieService } from 'src/app/services/movie.service';
   templateUrl: './movie-list.component.html',
   styleUrls: ['./movie-list.component.css']
 })
-export class MovieListComponent {
+export class MovieListComponent implements OnInit {
   movieList!: PopularMovie[];
   constructor(private movieService:MovieService){}
   ngOnInit(): void {

@@ -1,1 +1,6 @@
-<p>people-item works!</p>
+<div class="card m-1" style="width: 18rem; height: 500px;" [routerLink]="['/people/', person.id]">
+    <img [src]="setPeopleImg()" class="card-img-top" alt="No picture">
+    <div class="card-body">
+      <h5 class="card-title overflow">{{person.name}} </h5>
+    </div>
+</div>
