@@ -5,7 +5,7 @@
 }
 .vertical-line{
     border-left: 2px solid #5000B9;
-    height: 500px;
+    height: 1300px;
     margin: 0 ;
 }
 img{
@@ -17,4 +17,7 @@ img{
 .bg-black-50{
     background-color: rgba(0, 0, 0, 0.3);
     margin-left: 0px;
+}
+.card{
+    cursor: pointer;
 }

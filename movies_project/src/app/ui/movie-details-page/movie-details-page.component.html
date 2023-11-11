@@ -38,12 +38,28 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-12">
+                    <h1 class="h1 fw-bold">Actors</h1>
+                    <div class="d-flex overflow-x-scroll overflow-y-hidden">
+                        <div *ngFor="let actor of getActorsList()">
+                            <div class="card m-1" style="width: 18rem; height: 500px;" [routerLink]="['/people/', actor.id]">
+                                <img [src]="setActorImageUrl(actor)" class="card-img-top" alt="No picture">
+                                <div class="card-body">
+                                  <h5 class="card-title overflow">{{actor.character}} ({{actor.name}})</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="vertical-line col-1 mt-5"></div>
             <div class="col-3 mt-5">
                 <h2 class="h2 fw-bold">Rating</h2>
-                <div></div>
+                <div>
+                    <app-rating-item [average]="movie?.vote_average"></app-rating-item>
+                </div>
                 <h2 class="h2 fw-bold">Directors</h2>
+                <p class="text-white "><span *ngFor="let director of getDirectorsList()">{{director.name}} | </span>  </p>
             </div>
 
         </div>

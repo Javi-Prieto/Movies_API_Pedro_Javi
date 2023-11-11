@@ -1,5 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Cast } from 'src/app/models/credits-details.interface';
 import { MovieDetailsResponse } from 'src/app/models/movie-details.interface';
 import { MovieService } from 'src/app/services/movie.service';
 import { environment } from 'src/environments/environment.development';
@@ -12,10 +13,13 @@ import { environment } from 'src/environments/environment.development';
 export class MovieDetailsPageComponent implements OnInit{
 
 
+
   movie: MovieDetailsResponse | undefined;
   route: ActivatedRoute = inject(ActivatedRoute);
   movieId: number = 0;
   bgImage: string = '';
+  cast!: Cast[];
+  crew !: Cast[]; 
 
 
   constructor(private movieService: MovieService){
@@ -26,12 +30,26 @@ export class MovieDetailsPageComponent implements OnInit{
       this.movie = resp;
       this.bgImage = `url(${environment.imageBackgroundBaseUrl}${this.movie.backdrop_path})`;
     });
+    this.movieService.getCredits(this.movieId).subscribe(resp => {
+      this.cast = resp.cast;
+      this.crew = resp.crew;
+    });
   }
   setImgUrl():string{
     return `${environment.posterImageBaseUrl}${this.movie?.poster_path}`;
   }
   setBackCollectionUrl():string {
     return `background-image: url(${environment.imageBackgroundBaseUrl}${this.movie?.belongs_to_collection.backdrop_path});`;
+  }
+  getActorsList():Cast[]{
+    return this.cast.filter(people => people.known_for_department == 'Acting')
+  }
+  getDirectorsList():Cast[]{
+    return this.crew.filter(people => people.known_for_department == 'Directing');
+  }
+
+  setActorImageUrl(actor:Cast):string {
+    return `${environment.actorImageBaseUrl}${actor.profile_path}`;
   }
 
 }

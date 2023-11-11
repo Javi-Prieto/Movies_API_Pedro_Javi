@@ -27,6 +27,9 @@ import { MovieRatedListComponent } from './components/movie-rated-list/movie-rat
 import { CommonModule } from '@angular/common';
 import { HomePageComponent } from './ui/home-page/home-page.component';
 
+
+import { NgCircleProgressModule } from 'ng-circle-progress';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +60,15 @@ import { HomePageComponent } from './ui/home-page/home-page.component';
     CommonModule,
     AppRoutingModule,
     NgbModule,
+    NgCircleProgressModule.forRoot({
+      radius: 25,
+      outerStrokeWidth: 10,
+      innerStrokeWidth: 2,
+      outerStrokeColor: "#5000B9",
+      innerStrokeColor: "#111111",
+      backgroundColor: "#000000",
+      animationDuration: 300,
+    }),
     HttpClientModule
   ],
   providers: [],
