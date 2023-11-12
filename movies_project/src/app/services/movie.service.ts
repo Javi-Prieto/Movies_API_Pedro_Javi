@@ -7,6 +7,7 @@ import { MovieDetailsResponse } from '../models/movie-details.interface';
 import { CreditsResponse } from '../models/credits-details.interface';
 import { MovieTrailersResponse } from '../models/movie-trailers.interface';
 import { MovieImagesResponse } from '../models/movie-images.interface';
+import { MoviePlayNowResponse } from '../models/movie-playNow.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -36,9 +37,9 @@ export class MovieService {
   }
 
 
-
-
-
+  getPlayNowFilms(): Observable<MoviePlayNowResponse>{
+    return this.http.get<MoviePlayNowResponse>(`${environment.baseUrl}/movie/now_playing?${environment.apiKey}`)
+  }  
 
   getImages(id:number):Observable<MovieImagesResponse>{
     return this.http.get<MovieImagesResponse>(`${environment.baseUrl}/movie/${id}/images?${environment.apiKey}`)
