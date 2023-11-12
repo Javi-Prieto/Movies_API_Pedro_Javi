@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 declare var bootstrap: any;
 
 interface Image {
+  id: number;
   backdrop: string;
   poster: string;
   backdropUrl: string;
@@ -31,7 +32,8 @@ export class MoviePlayNowListComponent implements OnInit {
       backdropUrl: `${environment.imageBackgroundBaseUrl}${film.backdrop_path}`,
       posterUrl: `${environment.posterImageBaseUrl}${film.poster_path}`,
       title: film.title,
-      overview: film.overview
+      overview: film.overview,
+      id: film.id
       })) as Image[];
     });
 

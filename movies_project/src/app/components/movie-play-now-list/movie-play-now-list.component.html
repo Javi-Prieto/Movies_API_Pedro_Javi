@@ -6,11 +6,13 @@
     </div>
     <div class="carousel-inner">
       <div class="carousel-item" *ngFor="let image of carouselImages; let i = index" [class.active]="i === 0">
+        <a [routerLink]="['/movies', image.id]">
         <img class="d-block w-100" [src]="image.backdropUrl" alt="Backdrop">
         <div class="carousel-caption d-none d-md-block">
           <h5>{{image.title}}</h5>
-          <p>{{image.overview}}</p>          
+          <p>{{image.overview}}</p>                 
         </div>
+      </a> 
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
