@@ -36,6 +36,10 @@
                     <p class="fs-5" *ngIf="!person?.biography">
                         No Biography provided
                     </p>
+                    <h2 class="h2 fw-bold display-4">Movies</h2>
+                    <div class="d-flex overflow-x-scroll overflow-y-hidden">
+                        <app-movie-item [movie]="movie"  *ngFor="let movie of movies" class="mx-1 "></app-movie-item>
+                    </div>
                 </div>
             </div>
         </div>

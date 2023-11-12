@@ -31,6 +31,9 @@ export class PeopleDetailsPageComponent implements OnInit{
   setFaceImgUrl():string {
     return `${environment.actorImageBaseUrl}${this.person?.profile_path}`;
   }
+  setPosterImgUrl(path: string):string{
+    return `${environment.posterImageBaseUrl}${path}`;
+  }
   setGender():string{
     return this.person?.gender == 1? "Female" : "Male";
   }
