@@ -10,6 +10,7 @@ interface Image {
   backdropUrl: string;
   posterUrl: string;
   title: string;
+  overview: string;
 }
 
 @Component({
@@ -29,7 +30,8 @@ export class MoviePlayNowListComponent implements OnInit {
       this.carouselImages = this.film.map(film => ({
       backdropUrl: `${environment.imageBackgroundBaseUrl}${film.backdrop_path}`,
       posterUrl: `${environment.posterImageBaseUrl}${film.poster_path}`,
-      title: film.title
+      title: film.title,
+      overview: film.overview
       })) as Image[];
     });
 

@@ -8,7 +8,8 @@
       <div class="carousel-item" *ngFor="let image of carouselImages; let i = index" [class.active]="i === 0">
         <img class="d-block w-100" [src]="image.backdropUrl" alt="Backdrop">
         <div class="carousel-caption d-none d-md-block">
-          <h5>{{image.title}}</h5>          
+          <h5>{{image.title}}</h5>
+          <p>{{image.overview}}</p>          
         </div>
       </div>
     </div>
