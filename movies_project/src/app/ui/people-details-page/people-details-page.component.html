@@ -40,6 +40,10 @@
                     <div class="d-flex overflow-x-scroll overflow-y-hidden">
                         <app-movie-item [movie]="movie"  *ngFor="let movie of movies" class="mx-1 "></app-movie-item>
                     </div>
+                    <h2 class="h2 fw-bold display-4">Tv Shows</h2>
+                    <div class="d-flex overflow-x-scroll overflow-y-hidden">
+                        <app-serie-item *ngFor="let serie of tv_shows" [serie]="serie" class="mx-1"></app-serie-item>
+                    </div>
                 </div>
             </div>
         </div>
