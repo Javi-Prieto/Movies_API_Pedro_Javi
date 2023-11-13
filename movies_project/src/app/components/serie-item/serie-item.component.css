@@ -1,0 +1,14 @@
+.card {
+    cursor: pointer;
+}
+
+.card:hover {
+    box-shadow: grey 10px 10px 10px;
+}
+
+h5{
+    max-width: 100%; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
