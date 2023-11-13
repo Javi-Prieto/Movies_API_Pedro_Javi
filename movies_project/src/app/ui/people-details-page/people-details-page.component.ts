@@ -2,6 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PeopleDetailResponse } from 'src/app/models/people-details.interface';
 import { Cast } from 'src/app/models/person-movie.interface';
+import { CastTvShow } from 'src/app/models/tvshows-people.interface';
 import { PeopleService } from 'src/app/services/people.service';
 import { environment } from 'src/environments/environment.development';
 
@@ -17,6 +18,7 @@ export class PeopleDetailsPageComponent implements OnInit{
   artistId: number = 0;
   movies!: Cast[];
   bgImage !:string;
+  tv_shows !: CastTvShow[];
   constructor(private personService: PeopleService){
     this.artistId = this.route.snapshot.params['id'];
   }
@@ -26,6 +28,9 @@ export class PeopleDetailsPageComponent implements OnInit{
       this.personService.getMoviesFromPerson(this.artistId).subscribe(answ => {
         this.movies = answ.cast;
         this.bgImage = `url(${environment.posterImageBaseUrl}${this.movies.sort((a, b) => b.popularity-a.popularity)[0].poster_path})`;
+      });
+      this.personService.getTvShowsFromPerson(this.artistId).subscribe(answ => {
+        this.tv_shows = answ.cast;
       });
   }
   setFaceImgUrl():string {

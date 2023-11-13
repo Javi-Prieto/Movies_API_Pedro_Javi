@@ -5,6 +5,7 @@ import { PeopleListResponse } from '../models/people-list.interface';
 import { environment } from 'src/environments/environment.development';
 import { PeopleDetailResponse } from '../models/people-details.interface';
 import { MoviePersonResponse } from '../models/person-movie.interface';
+import { TvShowsPersonResponse } from '../models/tvshows-people.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +24,9 @@ export class PeopleService {
 
   getMoviesFromPerson(id:number):Observable<MoviePersonResponse>{
     return this.http.get<MoviePersonResponse>(`${environment.baseUrl}/person/${id}/movie_credits?${environment.apiKey}`);
+  }
+
+  getTvShowsFromPerson(id:number):Observable<TvShowsPersonResponse>{
+    return this.http.get<TvShowsPersonResponse>(`${environment.baseUrl}/person/${id}/tv_credits?${environment.apiKey}`);
   }
 }
