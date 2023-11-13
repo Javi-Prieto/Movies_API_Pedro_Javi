@@ -22,7 +22,9 @@
     height: 500px; /* Cambia este valor al tamaño deseado para la imagen de fondo */
   }
 
-  
+.list{
+    margin-top: 250px;
+}
 
  
 .text-ellipsis {
