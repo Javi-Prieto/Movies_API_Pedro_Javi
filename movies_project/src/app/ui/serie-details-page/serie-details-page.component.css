@@ -1,0 +1,23 @@
+.fondo{
+    background-color: black;
+}
+
+.info{
+    margin-top: 50px;
+    margin-left: 50px;
+    color: aliceblue;
+    justify-content: center;
+}
+
+.img{
+    margin-top: 90px;
+    margin-left: 90px;
+    width: 400px;
+}
+
+.background-image-container {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 500px; /* Cambia este valor al tamaño deseado para la imagen de fondo */
+  }
