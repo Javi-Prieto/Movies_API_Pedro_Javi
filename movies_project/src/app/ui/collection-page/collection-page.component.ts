@@ -24,7 +24,7 @@ export class CollectionPageComponent implements OnInit{
       });
   }
   setBgImg(path:string):string{
-    return `${environment.imageBackgroundBaseUrl}${path}`;
+    return `url(${environment.imageBackgroundBaseUrl}${path})`;
   }
   getCollectionAverageRating(movies: Part[]):number{
     let average:number= 0;
