@@ -42,12 +42,7 @@
                     </div>
                     <h2 class="h2 fw-bold display-4">Tv Shows</h2>
                     <div class="d-flex overflow-x-scroll overflow-y-hidden">
-                        <div class="card mx-1" style="width: 18rem; height: 500px;cursor: pointer;" *ngFor="let serie of tv_shows" [routerLink]="['/series', serie.id]">
-                            <img [src]="setPosterImgUrl(serie.poster_path)" class="card-img-top w-100" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">{{serie.name}}</h5>
-                            </div>
-                          </div>
+                        <app-serie-item *ngFor="let serie of tv_shows" [serie]="serie" class="mx-1"></app-serie-item>
                     </div>
                 </div>
             </div>

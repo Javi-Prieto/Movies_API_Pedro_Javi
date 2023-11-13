@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { PopularList } from 'src/app/models/serie-list.interface';
+import { CastTvShow } from 'src/app/models/tvshows-people.interface';
 import { environment } from 'src/environments/environment.development';
 
 @Component({
@@ -9,7 +10,7 @@ import { environment } from 'src/environments/environment.development';
 })
 export class SerieItemComponent {
 
-  @Input() serie!: PopularList;
+  @Input() serie!: PopularList | CastTvShow;
 
   setPosterUrl(): String {
     return `${environment.posterImageBaseUrl}${this.serie.poster_path}`;
