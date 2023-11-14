@@ -26,12 +26,11 @@ import { CollectionItemComponent } from './components/collection-item/collection
 import { MovieRatedListComponent } from './components/movie-rated-list/movie-rated-list.component';
 import { CommonModule } from '@angular/common';
 import { HomePageComponent } from './ui/home-page/home-page.component';
-
-
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { PopularMovieItemComponent } from './components/popular-movie-item/popular-movie-item.component';
 import { MoviePlayNowListComponent } from './components/movie-play-now-list/movie-play-now-list.component';
 import { MoviePlayNowItemComponent } from './components/movie-play-now-item/movie-play-now-item.component';
+import { TemporadasItemComponent } from './components/temporadas-item/temporadas-item.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +58,8 @@ import { MoviePlayNowItemComponent } from './components/movie-play-now-item/movi
     HomePageComponent,
     PopularMovieItemComponent,
     MoviePlayNowListComponent,
-    MoviePlayNowItemComponent
+    MoviePlayNowItemComponent,
+    TemporadasItemComponent
   ],
   imports: [
     BrowserModule,
