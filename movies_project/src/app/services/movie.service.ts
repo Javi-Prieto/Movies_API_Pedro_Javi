@@ -16,8 +16,8 @@ export class MovieService {
 
   constructor(private http: HttpClient) { }
 
-  getPopularMovieList(): Observable<MoviePopularListResponse> {
-    return this.http.get<MoviePopularListResponse>(`${environment.baseUrl}/movie/popular?${environment.apiKey}`);
+  getPopularMovieList(numPage: number): Observable<MoviePopularListResponse> {
+    return this.http.get<MoviePopularListResponse>(`${environment.baseUrl}/movie/popular?${environment.apiKey}&page=${numPage}`);
   }
 
   getMovieDetails(id: number): Observable<MovieDetailsResponse> {
@@ -43,5 +43,8 @@ export class MovieService {
 
   getImages(id:number):Observable<MovieImagesResponse>{
     return this.http.get<MovieImagesResponse>(`${environment.baseUrl}/movie/${id}/images?${environment.apiKey}`)
+  }
+  getMovieByName(name:string, page:number):Observable<MoviePopularListResponse>{
+    return this.http.get<MoviePopularListResponse>(`${environment.baseUrl}/search/movie?${environment.apiKey}&query=${name}&page=${page}`);
   }
 }
