@@ -1,3 +1,16 @@
+<div class="input-group mb-3 w-50 m-auto">
+    <input type="text" class="form-control" placeholder="Search For a Movie" aria-label="Example text with button addon" aria-describedby="button-addon1" (keyup)="loadPageByName($event)">
+    <button class="btn btn-outline-primary" type="button" id="button-addon1">Search</button>
+</div>  
 <div class="row">
     <app-movie-item *ngFor="let movie of movieList" [movie]="movie" class="col-2 mt-4"></app-movie-item>
 </div>
+<nav class="d-flex justify-content-center ">
+    <ngb-pagination 
+    [collectionSize]="numMovies" 
+    [pageSize]="20" 
+    [maxSize]="3" 
+    [rotate]="true" 
+    [(page)]="numPage" 
+    (pageChange)="loadNewPage()" class="align-self-centers" aria-label="Default pagination"></ngb-pagination>
+</nav>
