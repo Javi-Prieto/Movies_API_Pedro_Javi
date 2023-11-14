@@ -8,6 +8,10 @@
         <div class="info col-8">
             <h1>{{serie.name}}</h1>
             <div>
+                <span *ngFor="let genre of serie?.genres" class="badge rounded-pill text-bg-secondary m-1">
+                    {{genre.name}} </span>
+            </div>
+            <div>
                 <app-rating-item [average]="serie.vote_average"></app-rating-item>
             </div>
             <p>{{serie.first_air_date}}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -18,7 +22,7 @@
             <p>{{serie.overview}}</p>
         </div>
         <div>
-            <div class="row list d-flex justify-content-center ms-5">
+            <div class="row list d-flex justify-content-center">
                 <h3 class="col-12">Temporadas</h3>
                 <div class="col-12 d-flex overflow-x-scroll overflow-y-hidden">
                     <app-temporadas-item *ngFor="let temporada of temporadas"

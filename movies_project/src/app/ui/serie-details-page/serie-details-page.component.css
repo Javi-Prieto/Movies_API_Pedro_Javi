@@ -1,15 +1,15 @@
-.fondo{
+.fondo {
     background-color: black;
 }
 
-.info{
+.info {
     margin-top: 50px;
     margin-left: 50px;
     color: aliceblue;
     justify-content: center;
 }
 
-.img{
+.img {
     margin-top: 90px;
     margin-left: 90px;
     width: 400px;
@@ -19,16 +19,23 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 500px; /* Cambia este valor al tamaño deseado para la imagen de fondo */
-  }
-
-.list{
-    margin-top: 250px;
+    height: 500px;
+    /* Cambia este valor al tamaño deseado para la imagen de fondo */
 }
 
- 
+.list {
+    margin-top: 50px;
+    margin-left: 500px;
+    background-color: black;
+}
+
+
 .text-ellipsis {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+h3 {
+    color: #5000B9;
 }
