@@ -29,4 +29,7 @@ export class PeopleService {
   getTvShowsFromPerson(id:number):Observable<TvShowsPersonResponse>{
     return this.http.get<TvShowsPersonResponse>(`${environment.baseUrl}/person/${id}/tv_credits?${environment.apiKey}`);
   }
+  getPersonByName(name:string, page:number):Observable<PeopleListResponse>{
+    return this.http.get<PeopleListResponse>(`${environment.baseUrl}/search/person?${environment.apiKey}&query=${name}&page=${page}`);
+  }
 }
