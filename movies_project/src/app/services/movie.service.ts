@@ -8,6 +8,7 @@ import { CreditsResponse } from '../models/credits-details.interface';
 import { MovieTrailersResponse } from '../models/movie-trailers.interface';
 import { MovieImagesResponse } from '../models/movie-images.interface';
 import { MoviePlayNowResponse } from '../models/movie-playNow.interface';
+import { MovieGenresResponse } from '../models/genres-movies.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -46,5 +47,8 @@ export class MovieService {
   }
   getMovieByName(name:string, page:number):Observable<MoviePopularListResponse>{
     return this.http.get<MoviePopularListResponse>(`${environment.baseUrl}/search/movie?${environment.apiKey}&query=${name}&page=${page}`);
+  }
+  getMovieGenres():Observable<MovieGenresResponse>{
+    return this.http.get<MovieGenresResponse>(`${environment.baseUrl}/genre/movie/list?${environment.apiKey}`);
   }
 }
