@@ -17,7 +17,6 @@ export class MovieListComponent implements OnInit {
   numPage = 1;
   numMovies = 0;
   genresList !: Genre[];
-  genresChecked : string = '';
   genresCheck: boolean = false;
   
 
@@ -46,9 +45,7 @@ export class MovieListComponent implements OnInit {
   }
   loadPageByGender(event: any){
     let check = event.currentTarget.checked;
-    console.log(check);
     let value = event.currentTarget.value;
-    console.log(value)
     if(check){
       this.movieService.getPopularMovieList(this.numPage).subscribe(resp => {
         this.movieList = resp.results.filter(m => m.genre_ids.includes(+value));
