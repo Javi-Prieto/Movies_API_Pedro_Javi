@@ -22,4 +22,15 @@ export class PeopleListComponent implements OnInit{
       this.numPeople  = resp.total_results;
     });
   }
+  loadPageByName(event: any){
+    let name = event.target.value;
+    if(name == ''){
+      this.loadNewPage();
+    }else{
+      this.peopleService.getPersonByName(name, this.numPage).subscribe(resp => {
+        this.peopleList = resp.results;
+        this.numPeople  = resp.total_results;
+      });
+    }
+  }
 }

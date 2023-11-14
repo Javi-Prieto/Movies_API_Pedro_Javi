@@ -1,3 +1,11 @@
+<div class="input-group mb-3 w-50 m-auto">
+    <input type="text" class="form-control" placeholder="Look for a person" aria-label="Recipient's username" aria-describedby="button-addon2" (keyup)="loadPageByName($event)">
+    <button class="btn btn-outline-primary" type="button" id="button-addon2">Search</button>
+  </div>
+  
+<div class="row">
+    <app-people-item *ngFor="let p of peopleList" [person]="p" class="col-2 mt-3"></app-people-item>
+</div>
 <nav class="d-flex justify-content-center ">
     <ngb-pagination 
     [collectionSize]="numPeople" 
@@ -7,6 +15,3 @@
     [(page)]="numPage" 
     (pageChange)="loadNewPage()" class="align-self-centers" aria-label="Default pagination"></ngb-pagination>
 </nav>
-<div class="row">
-    <app-people-item *ngFor="let p of peopleList" [person]="p" class="col-2 mt-3"></app-people-item>
-</div>
