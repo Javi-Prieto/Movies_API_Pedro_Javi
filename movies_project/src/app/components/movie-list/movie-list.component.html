@@ -1,11 +1,25 @@
 <div class="input-group mb-3 w-50 m-auto">
     <input type="text" class="form-control" placeholder="Search For a Movie" aria-label="Example text with button addon" aria-describedby="button-addon1" (keyup)="loadPageByName($event)">
     <button class="btn btn-outline-primary" type="button" id="button-addon1">Search</button>
-</div>  
-<div class="row">
-    <app-movie-item *ngFor="let movie of movieList" [movie]="movie" class="col-2 mt-4"></app-movie-item>
+</div> 
+<div class="row w-100">
+    <div class="col-2 position-sticky">
+        <h2 class="h2 fw-bold text-white">
+            Genres
+        </h2>
+        <div class="row">
+            <div class="col-6 mt-1" *ngFor="let genre of genresList;index as i">
+                <input type="checkbox" class="btn-check" [id]="genre.name" autocomplete="off" [value]="genre.id" (change)="loadPageByGender($event)" [checked]="genresCheck">
+                <label class="btn btn-outline-primary" [for]="genre.name">{{genre.name}}</label><br>
+            </div>
+        </div>
+    </div>
+    <div class="row col-10">
+        <app-movie-item *ngFor="let movie of movieList" [movie]="movie" class="col-3 mt-4"></app-movie-item>
+    </div>
 </div>
-<nav class="d-flex justify-content-center ">
+
+<nav class="d-flex justify-content-center mt-2">
     <ngb-pagination 
     [collectionSize]="numMovies" 
     [pageSize]="20" 

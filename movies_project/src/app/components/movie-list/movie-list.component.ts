@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PopularMovie } from 'src/app/models/movie-popular-list.interface';
+import { Genre } from 'src/app/models/serie-details.interface';
 import { MovieService } from 'src/app/services/movie.service';
 
 @Component({
@@ -7,14 +8,24 @@ import { MovieService } from 'src/app/services/movie.service';
   templateUrl: './movie-list.component.html',
   styleUrls: ['./movie-list.component.css']
 })
+
+
+
+
 export class MovieListComponent implements OnInit {
   movieList!: PopularMovie[];
   numPage = 1;
   numMovies = 0;
+  genresList !: Genre[];
+  genresChecked : string = '';
+  genresCheck: boolean = false;
+  
+
 
   constructor(private movieService:MovieService){}
   ngOnInit(): void {
-      this.loadNewPage()
+    this.loadNewPage();
+    this.movieService.getMovieGenres().subscribe(ans => this.genresList = ans.genres);
   }
   loadNewPage(){
     this.movieService.getPopularMovieList(this.numPage).subscribe(resp => {
@@ -31,6 +42,20 @@ export class MovieListComponent implements OnInit {
         this.movieList = resp.results;
         this.numMovies = resp.total_results;
       });
+    }
+  }
+  loadPageByGender(event: any){
+    let check = event.currentTarget.checked;
+    console.log(check);
+    let value = event.currentTarget.value;
+    console.log(value)
+    if(check){
+      this.movieService.getPopularMovieList(this.numPage).subscribe(resp => {
+        this.movieList = resp.results.filter(m => m.genre_ids.includes(+value));
+        this.numMovies = resp.total_results;
+      });
+    }else{
+      this.loadNewPage();
     }
   }
 }
