@@ -31,6 +31,7 @@ import { PopularMovieItemComponent } from './components/popular-movie-item/popul
 import { MoviePlayNowListComponent } from './components/movie-play-now-list/movie-play-now-list.component';
 import { MoviePlayNowItemComponent } from './components/movie-play-now-item/movie-play-now-item.component';
 import { TemporadasItemComponent } from './components/temporadas-item/temporadas-item.component';
+import { ReviewItemComponent } from './components/review-item/review-item.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { TemporadasItemComponent } from './components/temporadas-item/temporadas
     PopularMovieItemComponent,
     MoviePlayNowListComponent,
     MoviePlayNowItemComponent,
-    TemporadasItemComponent
+    TemporadasItemComponent,
+    ReviewItemComponent
   ],
   imports: [
     BrowserModule,
