@@ -20,8 +20,8 @@ export class SerieDetailsPageComponent implements OnInit {
   route: ActivatedRoute = inject(ActivatedRoute);
   backgroundImg!: string;
   temporadas: Season[] = [];
-  coments!: ReviewResponse;
-  coment: Review[] = [];
+  coments!: Review [];
+  
 
   constructor(private serieService: SerieService, private sanitize: DomSanitizer) {
     this.serieId = this.route.snapshot.params['id'];
@@ -30,14 +30,14 @@ export class SerieDetailsPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.serieService.getSerieDetails(this.serieId).subscribe(resp => {
-      this.serie = resp;
+      this.serie = resp;      
       this.temporadas = this.serie.seasons;
       this.backgroundImg = `url(${environment.imageBackgroundBaseUrl}${this.serie.backdrop_path})`;
       console.log(this.backgroundImg);
     })
     this.serieService.getComents(this.serieId).subscribe(resp => {
-      this.coments = resp;
-      this.coment = this.coments.results
+      this.coments = resp.results;
+      console.log(this.coments);      
     })
   }
 

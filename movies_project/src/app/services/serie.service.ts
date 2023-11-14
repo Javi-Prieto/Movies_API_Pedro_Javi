@@ -22,7 +22,7 @@ export class SerieService {
   }
 
   getComents(id: number): Observable<ReviewResponse> {
-    return this.http.get<ReviewResponse>(`${environment.baseUrl}/tv/${id}/reviews?${environment.apiKey}`);
+    return this.http.get<ReviewResponse>(`${environment.baseUrl}/tv/${id}/reviews?${environment.apiKey}`);    
   }
 
 

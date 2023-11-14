@@ -16,6 +16,7 @@ export class SerieListComponent implements OnInit {
   ngOnInit(): void {
     this.serieService.getPopularFilmList().subscribe(resp => {
       this.serieList = resp.results;
+      console.log(this.serieList)
     })
   }
 

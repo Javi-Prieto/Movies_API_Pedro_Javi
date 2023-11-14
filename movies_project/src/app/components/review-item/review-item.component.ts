@@ -9,5 +9,9 @@ import { Review } from 'src/app/models/review-list.interface';
 export class ReviewItemComponent {
 
   @Input() comentario!: Review;
+  
+  setImg(): String{
+    return `https://secure.gravatar.com/avatar/${this.comentario.author_details.avatar_path}`
+  }
 
 }
