@@ -11,6 +11,7 @@ import { PeopleDetailsPageComponent } from './ui/people-details-page/people-deta
 import { PeopleListPageComponent } from './ui/people-list-page/people-list-page.component';
 import { UserPageComponent } from './ui/user-page/user-page.component';
 import { CollectionPageComponent } from './ui/collection-page/collection-page.component';
+import { SuccesComponent } from './components/succes/succes.component';
 
 const routes: Routes = [
 
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: "people/:id", component: PeopleDetailsPageComponent },
   { path: "user/:id", component: UserPageComponent },
   { path: "collection/:id", component: CollectionPageComponent },
+  {path: "succes", component: SuccesComponent},
   { path: "", pathMatch: "full", component: HomePageComponent },
   { path: '**', component: NotFoundPageComponent }
 ];
