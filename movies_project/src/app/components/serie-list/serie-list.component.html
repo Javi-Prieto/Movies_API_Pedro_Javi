@@ -1,3 +1,8 @@
+<div class="input-group mb-3 w-50 m-auto">
+    <input type="text" class="form-control" placeholder="Search For a Serie" aria-label="Example text with button addon"
+        aria-describedby="button-addon1" (keyup)="loadPageByName($event)">
+    <button class="btn btn-outline-primary" type="button" id="button-addon1">Search</button>
+</div>
 <div class="row">
     <app-serie-item *ngFor="let serie of serieList" [serie]="serie" class="col-2 mt-4"></app-serie-item>
 </div>

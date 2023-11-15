@@ -11,19 +11,31 @@ export class SerieListComponent implements OnInit {
 
   serieList!: PopularList[];
   numPage = 1;
-  numMovies = 0;
+  numSeries = 0;
 
   constructor(private serieService: SerieService) { }
 
   ngOnInit(): void {
     this.loadNewPage();
-    console.log(this.loadNewPage());
+
   }
 
   loadNewPage() {
     this.serieService.getPopularFilmList(this.numPage).subscribe(resp => {
       this.serieList = resp.results;
-      this.numMovies = resp.total_results;
+      this.numSeries = resp.total_results;
     });
+  }
+
+  loadPageByName(event: any) {
+    let name: string = event.target.value;
+    if (name == '') {
+      this.loadNewPage();
+    } else {
+      this.serieService.getSerieByName(event.target.value, this.numPage).subscribe(resp => {
+        this.serieList = resp.results;
+        this.numSeries = resp.total_results;
+      })
+    }
   }
 }

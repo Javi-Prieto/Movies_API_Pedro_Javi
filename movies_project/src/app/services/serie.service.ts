@@ -17,6 +17,10 @@ export class SerieService {
     return this.http.get<SeriePopularResponse>(`${environment.baseUrl}/tv/popular?${environment.apiKey}&page=${numPage}`);
   }
 
+  getSerieByName(name: string, page: number): Observable<SeriePopularResponse> {
+    return this.http.get<SeriePopularResponse>(`${environment.baseUrl}/search/tv?${environment.apiKey}&query=${name}&page=${page}`);
+  }
+
   getSerieDetails(id: number): Observable<SerieDetailResponse> {
     return this.http.get<SerieDetailResponse>(`${environment.baseUrl}/tv/${id}?${environment.apiKey}`);
   }
