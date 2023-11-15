@@ -38,5 +38,24 @@
 
 h3 {
     color: #5000B9;
+    margin-top: 40px;
 }
 
+.custom-scrollbar {
+    background-color: black;
+    scrollbar-color: #5000B9;
+    scrollbar-width: thin;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    background-color: black;
+    width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #5000B9;
+}
+
+.custom-scrollbar::-webkit-scrollbar:hover {
+    background-color: rgb(157, 104, 157);
+}
