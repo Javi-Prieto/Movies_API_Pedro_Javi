@@ -1,11 +1,12 @@
 .navbarStile {
-    background-color: #5000B9;
+    background-color: #692bbb;
 }
 
 a{
     font-size: 25px;
+    color: white!important;
 }
 
 a:hover {
-    color: aliceblue;
+    color: black!important;
 }

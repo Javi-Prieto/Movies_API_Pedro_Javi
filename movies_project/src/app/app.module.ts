@@ -32,6 +32,7 @@ import { MoviePlayNowListComponent } from './components/movie-play-now-list/movi
 import { MoviePlayNowItemComponent } from './components/movie-play-now-item/movie-play-now-item.component';
 import { TemporadasItemComponent } from './components/temporadas-item/temporadas-item.component';
 import { ReviewItemComponent } from './components/review-item/review-item.component';
+import { SuccesComponent } from './components/succes/succes.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { ReviewItemComponent } from './components/review-item/review-item.compon
     MoviePlayNowListComponent,
     MoviePlayNowItemComponent,
     TemporadasItemComponent,
-    ReviewItemComponent
+    ReviewItemComponent,
+    SuccesComponent
   ],
   imports: [
     BrowserModule,
