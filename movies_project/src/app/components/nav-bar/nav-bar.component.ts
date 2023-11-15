@@ -12,12 +12,9 @@ export class NavBarComponent implements OnInit{
   user!: UserDetailsResponse; 
   constructor(private serviceAuth: AuthService,private serviceAcc:AccountService){}
   ngOnInit(): void {
-    let user_id = localStorage.getItem('USER_ID');
-    console.log(user_id);
-    if(user_id!=null){
-      this.serviceAcc.getAccountDetailsById(+user_id).subscribe(answ => {
+    if(localStorage.getItem('SESSION_ID')!=null){
+      this.serviceAcc.getAccountDetailsBySession().subscribe(answ => {
         this.user = answ;
-        console.log(this.user);
       });
     };
       
@@ -29,7 +26,7 @@ export class NavBarComponent implements OnInit{
     });
   }
   isUserRegister():boolean{
-    let user_id = localStorage.getItem('USER_ID');
+    let user_id = localStorage.getItem('SESSION_ID');
     return user_id == null? true: false;
   }
 }

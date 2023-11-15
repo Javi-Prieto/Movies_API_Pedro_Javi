@@ -21,12 +21,4 @@ export class AccountService {
         }
       });
   }
-  getAccountDetailsById(id:number):Observable<UserDetailsResponse>{
-    return this.http.get<UserDetailsResponse>(`${environment.baseUrl}/account/${id}`,
-    {
-      headers: {
-        'Authorization': `Bearer ${environment.tmdbToken}`
-      }
-    });
-  }
 }
