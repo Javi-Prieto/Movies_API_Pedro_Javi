@@ -1,3 +1,8 @@
 <div class="row">
     <app-serie-item *ngFor="let serie of serieList" [serie]="serie" class="col-2 mt-4"></app-serie-item>
 </div>
+<nav class="d-flex justify-content-center mt-2">
+    <ngb-pagination [collectionSize]="numSeries" [pageSize]="20" [maxSize]="3" [rotate]="true" [(page)]="numPage"
+        (pageChange)="loadNewPage()" class="align-self-centers" aria-label="Default pagination">
+    </ngb-pagination>
+</nav>

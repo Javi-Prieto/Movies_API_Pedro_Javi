@@ -13,8 +13,8 @@ export class SerieService {
 
   constructor(private http: HttpClient) { }
 
-  getPopularFilmList(): Observable<SeriePopularResponse> {
-    return this.http.get<SeriePopularResponse>(`${environment.baseUrl}/tv/popular?${environment.apiKey}`);
+  getPopularFilmList(numPage: number): Observable<SeriePopularResponse> {
+    return this.http.get<SeriePopularResponse>(`${environment.baseUrl}/tv/popular?${environment.apiKey}&page=${numPage}`);
   }
 
   getSerieDetails(id: number): Observable<SerieDetailResponse> {
@@ -22,7 +22,7 @@ export class SerieService {
   }
 
   getComents(id: number): Observable<ReviewResponse> {
-    return this.http.get<ReviewResponse>(`${environment.baseUrl}/tv/${id}/reviews?${environment.apiKey}`);    
+    return this.http.get<ReviewResponse>(`${environment.baseUrl}/tv/${id}/reviews?${environment.apiKey}`);
   }
 
 

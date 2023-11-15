@@ -10,14 +10,20 @@ import { SerieService } from 'src/app/services/serie.service';
 export class SerieListComponent implements OnInit {
 
   serieList!: PopularList[];
+  numPage = 1;
+  numMovies = 0;
 
   constructor(private serieService: SerieService) { }
 
   ngOnInit(): void {
-    this.serieService.getPopularFilmList().subscribe(resp => {
-      this.serieList = resp.results;
-      console.log(this.serieList)
-    })
+    this.loadNewPage();
+    console.log(this.loadNewPage());
   }
 
+  loadNewPage() {
+    this.serieService.getPopularFilmList(this.numPage).subscribe(resp => {
+      this.serieList = resp.results;
+      this.numMovies = resp.total_results;
+    });
+  }
 }
