@@ -1,3 +1,11 @@
+.card {
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px;
+    background-color: rgba(88, 18, 162, 0.471);
+}
+
 .container {
     position: relative;
     overflow: hidden;
@@ -14,7 +22,7 @@
     top: 0;
     width: 100%;
     height: 100%;
-
+    background: #e5e5e5;
     opacity: 0;
     transition: .5s ease all;
 }
@@ -28,6 +36,7 @@ img {
 
 .card-body {
     height: 60px;
+    /* Ajusta la altura según tus necesidades */
     padding: 10px;
     box-sizing: border-box;
 }
@@ -36,7 +45,7 @@ h5 {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    color: aliceblue;
+    color: #e5e5e5;
 }
 
 .container:hover img {
