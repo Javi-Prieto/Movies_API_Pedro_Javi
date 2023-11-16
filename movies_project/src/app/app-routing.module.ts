@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './ui/home-page/home-page.component';
-import { SerieListComponent } from './components/serie-list/serie-list.component';
 import { SerieListPageComponent } from './ui/serie-list-page/serie-list-page.component';
 import { SerieDetailsPageComponent } from './ui/serie-details-page/serie-details-page.component';
 import { NotFoundPageComponent } from './ui/not-found-page/not-found-page.component';
