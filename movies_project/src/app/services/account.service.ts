@@ -1,3 +1,4 @@
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -6,10 +7,7 @@ import { UserDetailsResponse } from '../models/user-details.interface';
 import { AddAccountResponse } from '../models/add-account.interface';
 import { MovieWatchListResponse } from '../models/movie-watchlist.interface';
 
-@Injectable({
-  providedIn: 'root'
-})
-export class AccountService {
+
 
   constructor(private http: HttpClient) { }
 
@@ -91,3 +89,4 @@ export class AccountService {
     );
   }
 }
+

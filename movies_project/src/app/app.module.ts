@@ -33,10 +33,13 @@ import { MoviePlayNowItemComponent } from './components/movie-play-now-item/movi
 import { TemporadasItemComponent } from './components/temporadas-item/temporadas-item.component';
 import { ReviewItemComponent } from './components/review-item/review-item.component';
 import { SuccesComponent } from './components/succes/succes.component';
+
+import { BotonFavComponent } from './components/boton-fav/boton-fav.component';
 import { WatchlistComponent } from './components/watchlist/watchlist.component';
 import { WatchlistListComponent } from './components/watchlist-list/watchlist-list.component';
 import { WatchlistMovieItemComponent } from './components/watchlist-movie-item/watchlist-movie-item.component';
 import { WatchlistDeleteButtonComponent } from './components/watchlist-delete-button/watchlist-delete-button.component';
+
 
 @NgModule({
   declarations: [
@@ -68,10 +71,14 @@ import { WatchlistDeleteButtonComponent } from './components/watchlist-delete-bu
     TemporadasItemComponent,
     ReviewItemComponent,
     SuccesComponent,
+    BotonFavComponent
+
+    WatchlistCompone
     WatchlistComponent,
     WatchlistListComponent,
     WatchlistMovieItemComponent,
     WatchlistDeleteButtonComponent
+
   ],
   imports: [
     BrowserModule,
