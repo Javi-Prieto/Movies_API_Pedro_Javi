@@ -17,6 +17,7 @@ export class SuccesComponent implements OnInit{
         
         this.serviceAcc.getAccountDetailsBySession().subscribe(answ => {
           window.location.href = 'http://localhost:4200/';
+          localStorage.setItem('USER_ID', answ.id.toString());
         });
       });
   }
