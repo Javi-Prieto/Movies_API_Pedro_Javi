@@ -22,6 +22,15 @@ export class AccountService {
         }
       });
   }
+  getAccountDetailsById():Observable<UserDetailsResponse>{
+    let user_id = localStorage.getItem('USER_ID');
+    return this.http.get<UserDetailsResponse>(`${environment.baseUrl}/account/${user_id}`,
+      {
+        headers: {
+          'Authorization': `Bearer ${environment.tmdbToken}`
+        }
+      });
+  }
 
 
 
