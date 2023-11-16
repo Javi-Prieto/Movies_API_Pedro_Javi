@@ -9,20 +9,13 @@ import { environment } from 'src/environments/environment.development';
   templateUrl: './movie-item.component.html',
   styleUrls: ['./movie-item.component.css']
 })
-export class MovieItemComponent implements OnInit{
+export class MovieItemComponent {
 
   @Input() movie!: PopularMovie | Cast;
   type: string = 'movie';
-  isOnWatchList!:boolean;
-  constructor(private accService: AccountService){}
+  
 
-  ngOnInit(): void {
-      this.accService.getMoviesWatchList().subscribe(answ => {
-        console.log(answ.results);
-        this.isOnWatchList = answ.results.map(m => m.id).includes(this.movie.id);
-        console.log(this.isOnWatchList);
-      });
-  }
+  
 
   setPosterUrl(): string {
     return `${environment.posterImageBaseUrl}${this.movie.poster_path}`;

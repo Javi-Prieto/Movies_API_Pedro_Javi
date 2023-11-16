@@ -1,5 +1,5 @@
 <div *ngIf="isUserRegister()">
-  <app-watchlist [id]="movie.id" [type]="type" *ngIf="!isOnWatchList"></app-watchlist>
+  <app-watchlist [id]="movie.id" [type]="type" ></app-watchlist>
 </div>
 <div class="card container" style="width: 18rem; height: 450px;" [routerLink]="['/movies', movie.id]">
   <img [src]="setPosterUrl()" class="card-img-top" alt="...">
