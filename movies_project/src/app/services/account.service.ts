@@ -77,5 +77,16 @@ import { MovieWatchListResponse } from '../models/movie-watchlist.interface';
     }
     );
   }
+  getMoviesWatchListByPage(numPage: number):Observable<MovieWatchListResponse>{
+    let session_id = localStorage.getItem('SESSION_ID')
+    let user_id = localStorage.getItem('USER_ID');
+    return this.http.get<MovieWatchListResponse>(`${environment.baseUrl}/account/${user_id}/watchlist/movies?page=${numPage}`,
+    {
+      headers: {
+        'Authorization': `Bearer ${environment.tmdbToken}`
+      }
+    }
+    );
+  }
 }
 

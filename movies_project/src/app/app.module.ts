@@ -36,6 +36,9 @@ import { SuccesComponent } from './components/succes/succes.component';
 
 import { BotonFavComponent } from './components/boton-fav/boton-fav.component';
 import { WatchlistComponent } from './components/watchlist/watchlist.component';
+import { WatchlistListComponent } from './components/watchlist-list/watchlist-list.component';
+import { WatchlistMovieItemComponent } from './components/watchlist-movie-item/watchlist-movie-item.component';
+import { WatchlistDeleteButtonComponent } from './components/watchlist-delete-button/watchlist-delete-button.component';
 
 
 @NgModule({
@@ -68,10 +71,13 @@ import { WatchlistComponent } from './components/watchlist/watchlist.component';
     TemporadasItemComponent,
     ReviewItemComponent,
     SuccesComponent,
-
     BotonFavComponent
 
-    WatchlistComponent
+    WatchlistCompone
+    WatchlistComponent,
+    WatchlistListComponent,
+    WatchlistMovieItemComponent,
+    WatchlistDeleteButtonComponent
 
   ],
   imports: [

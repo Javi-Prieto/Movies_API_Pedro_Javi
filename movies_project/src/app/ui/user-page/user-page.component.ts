@@ -10,7 +10,12 @@ import { environment } from 'src/environments/environment.development';
 })
 export class UserPageComponent implements OnInit{
   userAcc!: UserDetailsResponse;
-  
+  watchListMovie : boolean = true;
+  watchListSerie: boolean = false;
+  favouriteMovie: boolean = false;
+  favouriteSerie: boolean = false;
+
+
   constructor(private accService: AccountService){}
 
   ngOnInit(): void {
