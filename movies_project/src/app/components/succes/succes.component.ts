@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class SuccesComponent implements OnInit {
   constructor(private serviceAuth: AuthService, private serviceAcc: AccountService) { }
   ngOnInit(): void {
+
     let token = localStorage.getItem('REQUEST_TOKEN');
     this.serviceAuth.createSession(token!).subscribe(answ => {
 
@@ -17,6 +18,17 @@ export class SuccesComponent implements OnInit {
 
       this.serviceAcc.getAccountDetailsBySession().subscribe(answ => {
         window.location.href = 'http://localhost:4200/';
+
+      let token = localStorage.getItem('REQUEST_TOKEN');
+      this.serviceAuth.createSession(token!).subscribe(answ => {
+        
+        localStorage.setItem('SESSION_ID', answ.session_id);
+        
+        this.serviceAcc.getAccountDetailsBySession().subscribe(answ => {
+          window.location.href = 'http://localhost:4200/';
+          localStorage.setItem('USER_ID', answ.id.toString());
+        });
+
       });
     });
   }
