@@ -1,0 +1,14 @@
+<div class="row" *ngIf="movie">
+    <app-watchlist-movie-item *ngFor="let movie of movieList" [movie]="movie" class="col-3"></app-watchlist-movie-item>
+</div>
+<div class="row" *ngIf="serie">
+</div>
+<nav class="d-flex justify-content-center mt-2">
+    <ngb-pagination 
+    [collectionSize]="totalElements" 
+    [pageSize]="20" 
+    [maxSize]="3" 
+    [rotate]="true" 
+    [(page)]="numPage" 
+    (pageChange)="loadNewPage()" class="align-self-centers" aria-label="Default pagination"></ngb-pagination>
+</nav>

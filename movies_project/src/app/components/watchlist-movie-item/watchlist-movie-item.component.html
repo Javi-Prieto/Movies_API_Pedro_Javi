@@ -1,0 +1,8 @@
+
+<app-watchlist-delete-button [id]="movie.id" [type]="'movie'"></app-watchlist-delete-button>
+<div class="card container" style="width: 18rem; height: 450px; cursor: pointer;" [routerLink]="['/movies', movie.id]">
+    <img [src]="setPosterUrl()" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{movie.title}}</h5>
+    </div>
+</div>
