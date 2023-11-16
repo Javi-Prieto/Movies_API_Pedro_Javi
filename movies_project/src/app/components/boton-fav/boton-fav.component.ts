@@ -10,12 +10,14 @@ export class BotonFavComponent {
 
   @Input() type!: String;
   @Input() id!: number;
-  @Input() favourite!: boolean;
+
 
   constructor(private acountService: AccountService) { }
 
-  agregar(): void {
-    this.acountService.addFavorite(this.type, this.id, this.favourite);
+  agregar() {
+    this.acountService.addFavorite(this.type, this.id, true).subscribe(resp => {
+
+    })
   }
 
 }

@@ -26,7 +26,8 @@ export class AccountService {
 
     addFavorite(type: String, id: number, favourite: boolean): Observable<AddAccountResponse> {
         let session_id = localStorage.getItem('SESSION_ID');
-        return this.http.post<AddAccountResponse>(`${environment.baseUrl}/accountfavorite?session_id=${session_id}`,
+        let user_id = localStorage.getItem('USER_ID');
+        return this.http.post<AddAccountResponse>(`${environment.baseUrl}/account/${user_id}/favorite?session_id=${session_id}&${environment.apiKey}`,
             {
                 "media_type": type,
                 "media_id": id,
