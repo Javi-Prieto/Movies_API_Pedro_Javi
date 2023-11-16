@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AccountService } from 'src/app/services/account.service';
+import { AccountService } from 'src/app/services/AccountService';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -7,17 +7,17 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './succes.component.html',
   styleUrls: ['./succes.component.css']
 })
-export class SuccesComponent implements OnInit{
-  constructor(private serviceAuth: AuthService, private serviceAcc: AccountService){}
+export class SuccesComponent implements OnInit {
+  constructor(private serviceAuth: AuthService, private serviceAcc: AccountService) { }
   ngOnInit(): void {
-      let token = localStorage.getItem('REQUEST_TOKEN');
-      this.serviceAuth.createSession(token!).subscribe(answ => {
-        
-        localStorage.setItem('SESSION_ID', answ.session_id);
-        
-        this.serviceAcc.getAccountDetailsBySession().subscribe(answ => {
-          window.location.href = 'http://localhost:4200/';
-        });
+    let token = localStorage.getItem('REQUEST_TOKEN');
+    this.serviceAuth.createSession(token!).subscribe(answ => {
+
+      localStorage.setItem('SESSION_ID', answ.session_id);
+
+      this.serviceAcc.getAccountDetailsBySession().subscribe(answ => {
+        window.location.href = 'http://localhost:4200/';
       });
+    });
   }
 }
