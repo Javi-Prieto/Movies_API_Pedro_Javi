@@ -1,14 +1,47 @@
 <div class="container-fluid text-white mt-5">
     <div class="row w-90 m-auto">
-        <div class="col-4">
+        <div class="col-2">
             <img [src]="getUserAvatar()" alt="">
             <h1 class="h1-display-2 align-items-center">
                     {{userAcc.username}}
             </h1>
         </div>
-        <div class="col-8">
-    
+        <div class="col-10">
+            <div class="d-flex justify-content-around">
+                <div ngbDropdown class="d-inline-block">
+                    <button type="button" class="btn btn-lg btn-secondary" id="dropdownBasic1" ngbDropdownToggle >
+                        WatchList
+                    </button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button ngbDropdownItem (click)="watchListMovie = true  
+                                                            && watchListSerie = false
+                                                            && favouriteMovie = false
+                                                            && favouriteSerie = false">Movies</button>
+                        <button ngbDropdownItem (click)="watchListSerie = true 
+                                                            && watchListMovie = false
+                                                            && favouriteMovie = false
+                                                            && favouriteSerie = false">Series</button>
+                    </div>
+                </div>
+                <div ngbDropdown class="d-inline-block">
+                    <button type="button" class="btn btn-lg btn-secondary" id="dropdownBasic1" ngbDropdownToggle>
+                        Favourite
+                    </button>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button ngbDropdownItem (click)="favouriteMovie = true
+                                                            && watchListMovie = false
+                                                            && watchListSerie = false
+                                                            && favouriteSerie = false">Movies</button>
+                        <button ngbDropdownItem (click)="favouriteSerie = true
+                                                            && watchListMovie = false
+                                                            && watchListSerie = false
+                                                            && favouriteMovie = false">Series</button>
+                    </div>
+                </div>    
+            </div>
+            <hr>
+            <app-watchlist-list [movie]="true" [serie]="false" *ngIf="watchListMovie"></app-watchlist-list>
+            <app-watchlist-list [serie]="true" [movie]="false" *ngIf="watchListSerie"></app-watchlist-list>
         </div>
     </div>
-    
 </div>

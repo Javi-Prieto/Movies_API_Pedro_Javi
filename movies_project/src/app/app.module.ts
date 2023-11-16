@@ -34,6 +34,9 @@ import { TemporadasItemComponent } from './components/temporadas-item/temporadas
 import { ReviewItemComponent } from './components/review-item/review-item.component';
 import { SuccesComponent } from './components/succes/succes.component';
 import { WatchlistComponent } from './components/watchlist/watchlist.component';
+import { WatchlistListComponent } from './components/watchlist-list/watchlist-list.component';
+import { WatchlistMovieItemComponent } from './components/watchlist-movie-item/watchlist-movie-item.component';
+import { WatchlistDeleteButtonComponent } from './components/watchlist-delete-button/watchlist-delete-button.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +68,10 @@ import { WatchlistComponent } from './components/watchlist/watchlist.component';
     TemporadasItemComponent,
     ReviewItemComponent,
     SuccesComponent,
-    WatchlistComponent
+    WatchlistComponent,
+    WatchlistListComponent,
+    WatchlistMovieItemComponent,
+    WatchlistDeleteButtonComponent
   ],
   imports: [
     BrowserModule,
