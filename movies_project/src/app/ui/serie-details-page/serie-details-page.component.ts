@@ -51,4 +51,9 @@ export class SerieDetailsPageComponent implements OnInit {
   getTemporadaPoster(temporada: Season): string {
     return `${environment.posterImageBaseUrl}${temporada.poster_path}`;
   }
+
+  isRegisted(): boolean {
+    let user_id = localStorage.getItem('SESSION_ID');
+    return user_id != null ? true : false;
+  }
 }

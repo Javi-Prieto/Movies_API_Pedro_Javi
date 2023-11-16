@@ -13,7 +13,7 @@
                         {{genre.name}} </span>
                 </div>
                 <div>
-                    <app-boton-fav [type]="type" [id]="serie.id"></app-boton-fav>
+                    <app-boton-fav [type]="type" [id]="serie.id" *ngIf="isRegisted()"></app-boton-fav>
                     <app-rating-item [average]="serie.vote_average"></app-rating-item>
                 </div>
                 <p>{{serie.first_air_date}}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
