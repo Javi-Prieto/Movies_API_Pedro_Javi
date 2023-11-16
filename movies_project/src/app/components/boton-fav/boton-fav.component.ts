@@ -10,13 +10,18 @@ export class BotonFavComponent {
 
   @Input() type!: String;
   @Input() id!: number;
-
+  isPresent!: boolean;
 
   constructor(private acountService: AccountService) { }
 
-  agregar() {
-    this.acountService.addFavorite(this.type, this.id, true).subscribe(resp => {
+  ngOnInit(): void {
+    this.acountService.getFavSerie().subscribe(resp => {
+      this.isPresent = resp.results.map(s => s.id).includes(this.id);
+    })
+  }
 
+  agregar() {
+    this.acountService.addFavorite(this.type, this.id, true).subscribe(answ => {
     })
   }
 

@@ -21,7 +21,7 @@ export class SerieDetailsPageComponent implements OnInit {
   backgroundImg!: string;
   temporadas: Season[] = [];
   coments!: Review[];
-  type: String = 'serie';
+  type: String = 'tv';
   favourite: boolean = true;
 
   constructor(private serieService: SerieService, private sanitize: DomSanitizer) {
@@ -32,7 +32,9 @@ export class SerieDetailsPageComponent implements OnInit {
   ngOnInit(): void {
     this.serieService.getSerieDetails(this.serieId).subscribe(resp => {
       this.serie = resp;
+      this.serieId = resp.id;
       this.temporadas = this.serie.seasons;
+
       this.backgroundImg = `url(${environment.imageBackgroundBaseUrl}${this.serie.backdrop_path})`;
       console.log(this.backgroundImg);
     })
