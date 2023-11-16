@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 import { UserDetailsResponse } from '../models/user-details.interface';
+import { AddAccountResponse } from '../models/add-account.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -20,5 +21,41 @@ export class AccountService {
           'Authorization': `Bearer ${environment.tmdbToken}`
         }
       });
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  addToWatchList(type: string, id:number, insert:boolean):Observable<AddAccountResponse>{
+    let session_id = localStorage.getItem('SESSION_ID');
+    return this.http.post<AddAccountResponse>(`${environment.baseUrl}/account/watchlist?session_id=${session_id}`,
+    {
+      media_type: type,
+      media_id: id,
+      watchlist: insert
+    },
+    {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${environment.tmdbToken}`
+      }
+    }
+    );
   }
 }
