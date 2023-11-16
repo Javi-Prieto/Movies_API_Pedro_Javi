@@ -13,6 +13,10 @@ export class WatchlistComponent {
   constructor(private accService: AccountService){}
 
   addToWatchList(){
-    this.accService.addToWatchList(this.type, this.id, true).subscribe();
+    this.accService.addToWatchList(this.type, this.id, true).subscribe(answ => 
+        {
+          window.location.href ='http://localhost:4200/movies/';
+        }
+      );
   }
 }
