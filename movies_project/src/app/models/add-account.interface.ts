@@ -2,8 +2,6 @@
 
 export interface AddAccountResponse {
 
-    status_code: number;
-
     status_code:    number;
 
     status_message: string;
