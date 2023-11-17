@@ -14,7 +14,9 @@ export class NavBarComponent implements OnInit{
   ngOnInit(): void {
     if(localStorage.getItem('SESSION_ID')!=null){
       this.serviceAcc.getAccountDetailsBySession().subscribe(answ => {
+        localStorage.setItem('USER_ID', answ.id.toString());
         this.user = answ;
+
       });
     };
       

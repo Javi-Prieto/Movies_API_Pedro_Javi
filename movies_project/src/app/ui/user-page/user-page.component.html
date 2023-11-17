@@ -13,14 +13,8 @@
                         WatchList
                     </button>
                     <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                        <button ngbDropdownItem (click)="watchListMovie = true  
-                                                            && watchListSerie = false
-                                                            && favouriteMovie = false
-                                                            && favouriteSerie = false">Movies</button>
-                        <button ngbDropdownItem (click)="watchListSerie = true 
-                                                            && watchListMovie = false
-                                                            && favouriteMovie = false
-                                                            && favouriteSerie = false">Series</button>
+                        <button ngbDropdownItem (click)="onMovieWlClicked()">Movies</button>
+                        <button ngbDropdownItem (click)="onSerieWlClicked()">Series</button>
                     </div>
                 </div>
                 <div ngbDropdown class="d-inline-block">
@@ -28,14 +22,8 @@
                         Favourite
                     </button>
                     <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                        <button ngbDropdownItem (click)="favouriteMovie = true
-                                                            && watchListMovie = false
-                                                            && watchListSerie = false
-                                                            && favouriteSerie = false">Movies</button>
-                        <button ngbDropdownItem (click)="favouriteSerie = true
-                                                            && watchListMovie = false
-                                                            && watchListSerie = false
-                                                            && favouriteMovie = false">Series</button>
+                        <button ngbDropdownItem (click)="onMovieFavClicked()">Movies</button>
+                        <button ngbDropdownItem (click)="onSerieFavClicked()">Series</button>
                     </div>
                 </div>    
             </div>

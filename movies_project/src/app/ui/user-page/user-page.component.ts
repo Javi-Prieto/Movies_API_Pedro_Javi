@@ -30,4 +30,28 @@ export class UserPageComponent implements OnInit{
       return "https://freeiconshop.com/wp-content/uploads/edd/person-flat.png";
     return `${environment.actorImageBaseUrl}${this.userAcc.avatar.tmdb.avatar_path}`;
   }
+  onMovieWlClicked(){
+    this.watchListMovie = true;
+    this.watchListSerie = false;
+    this.favouriteMovie = false;
+    this.favouriteSerie = false;
+  }
+  onSerieWlClicked(){
+    this.watchListSerie = true;
+    this.watchListMovie = false;
+    this.favouriteMovie = false;
+    this.favouriteSerie = false;
+  }
+  onMovieFavClicked(){
+    this.favouriteMovie = true;
+    this.watchListMovie = false;
+    this.watchListSerie = false;
+    this.favouriteSerie = false;
+  }
+  onSerieFavClicked(){
+    this.favouriteSerie = true;
+    this.watchListMovie = false;
+    this.watchListSerie = false;
+    this.favouriteMovie = false;
+  }
 }
