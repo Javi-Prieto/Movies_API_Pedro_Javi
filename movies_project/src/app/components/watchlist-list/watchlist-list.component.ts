@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MovieWatchlist } from 'src/app/models/movie-watchlist.interface';
+import { SerieWatchlist } from 'src/app/models/serie-watchlist.interface';
 import { AccountService } from 'src/app/services/account.service';
 
 @Component({
@@ -11,6 +12,7 @@ export class WatchlistListComponent implements OnInit{
   @Input() movie :boolean = false;
   @Input() serie:boolean = false;
   movieList!: MovieWatchlist[]; 
+  serieList !: SerieWatchlist[];
   numPage: number = 1;
   totalElements: number = 0;
   constructor(private accService: AccountService){}
@@ -26,7 +28,10 @@ export class WatchlistListComponent implements OnInit{
       });
     }
     if(this.serie){
-
+      this.accService.getSeriesWatchListByPage(this.numPage).subscribe(ans => {
+        this.serieList = ans.results;
+        this.totalElements = ans.total_results;
+      });
     }
   }
 

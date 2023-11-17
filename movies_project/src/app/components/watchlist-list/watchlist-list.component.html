@@ -1,8 +1,8 @@
-<div class="row" *ngIf="movie">
-    <app-watchlist-movie-item *ngFor="let movie of movieList" [movie]="movie" class="col-3"></app-watchlist-movie-item>
+<div class="row" >
+    <app-watchlist-movie-item *ngFor="let movie of movieList" [movie]="movie" class="col-3" ></app-watchlist-movie-item>
+    <app-watchlist-serie-item *ngFor="let serie of serieList" [serie]="serie" class="col-3" ></app-watchlist-serie-item>
 </div>
-<div class="row" *ngIf="serie">
-</div>
+
 <nav class="d-flex justify-content-center mt-2">
     <ngb-pagination 
     [collectionSize]="totalElements" 

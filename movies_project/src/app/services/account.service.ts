@@ -7,6 +7,7 @@ import { AddAccountResponse } from '../models/add-account.interface';
 import { MovieWatchListResponse } from '../models/movie-watchlist.interface';
 import { FabSeriesResponse } from '../models/get-fav-tv.interface';
 import { Injectable } from '@angular/core';
+import { WatchListSerieResponse } from '../models/serie-watchlist.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -57,8 +58,9 @@ export class AccountService {
       });
   }
   getAccountDetailsById():Observable<UserDetailsResponse>{
+    let session_id = localStorage.getItem('SESSION_ID')
     let user_id = localStorage.getItem('USER_ID');
-    return this.http.get<UserDetailsResponse>(`${environment.baseUrl}/account/${user_id}`,
+    return this.http.get<UserDetailsResponse>(`${environment.baseUrl}/account/${user_id}?session_id=${session_id}`,
       {
         headers: {
           'Authorization': `Bearer ${environment.tmdbToken}`
@@ -97,7 +99,19 @@ export class AccountService {
   getMoviesWatchListByPage(numPage: number):Observable<MovieWatchListResponse>{
     let session_id = localStorage.getItem('SESSION_ID')
     let user_id = localStorage.getItem('USER_ID');
-    return this.http.get<MovieWatchListResponse>(`${environment.baseUrl}/account/${user_id}/watchlist/movies?page=${numPage}`,
+    return this.http.get<MovieWatchListResponse>(`${environment.baseUrl}/account/${user_id}/watchlist/movies?page=${numPage}&session_id=${session_id}`,
+    {
+      headers: {
+        'Authorization': `Bearer ${environment.tmdbToken}`
+      }
+    }
+    );
+  }
+
+  getSeriesWatchListByPage(numPage: number):Observable<WatchListSerieResponse>{
+    let session_id = localStorage.getItem('SESSION_ID')
+    let user_id = localStorage.getItem('USER_ID');
+    return this.http.get<WatchListSerieResponse>(`${environment.baseUrl}/account/${user_id}/watchlist/tv?page=${numPage}&session_id=${session_id}`,
     {
       headers: {
         'Authorization': `Bearer ${environment.tmdbToken}`
