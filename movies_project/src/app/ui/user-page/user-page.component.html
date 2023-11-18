@@ -30,7 +30,8 @@
             <hr>
             <app-watchlist-list [movie]="true" [serie]="false" *ngIf="watchListMovie"></app-watchlist-list>
             <app-watchlist-list [serie]="true" [movie]="false" *ngIf="watchListSerie"></app-watchlist-list>
-            <app-fav-list [serie]="true" *ngIf="favouriteSerie"></app-fav-list>
+            <app-fav-list [serie]="true" [movie]="false" *ngIf="favouriteSerie"></app-fav-list>
+            <app-fav-list [movie]="true" [serie]="false" *ngIf="favouriteMovie"></app-fav-list>
         </div>
 
     </div>

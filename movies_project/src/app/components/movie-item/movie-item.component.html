@@ -1,10 +1,12 @@
-<div *ngIf="isUserRegister()">
-  <app-watchlist [id]="movie.id" [type]="type" ></app-watchlist>
+<div class="d-flex" *ngIf="isUserRegister()">
+  <app-watchlist [id]="movie.id" [type]="type"></app-watchlist>
+  <app-boton-fav [id]="movie.id" [type]="type"></app-boton-fav>
+
 </div>
 <div class="card container" style="width: 18rem; height: 450px;" [routerLink]="['/movies', movie.id]">
   <img [src]="setPosterUrl()" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title overflow">{{movie.title}}</h5>
-    
+
   </div>
 </div>

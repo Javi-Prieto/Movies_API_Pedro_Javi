@@ -22,7 +22,11 @@ export class BotonFavComponent {
 
   agregar() {
     this.acountService.addFavorite(this.type, this.id, true).subscribe(answ => {
-      window.location.href = `http://localhost:4200/series/${this.id}`
+      if (this.type === 'tv') {
+        window.location.href = `http://localhost:4200/series/${this.id}`;
+      } else if (this.type === 'tv') {
+        window.location.reload();
+      }
     })
   }
 

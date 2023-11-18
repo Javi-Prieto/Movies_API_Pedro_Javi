@@ -43,6 +43,8 @@ import { AccountService } from './services/account.service';
 import { WatchlistSerieItemComponent } from './components/watchlist-serie-item/watchlist-serie-item.component';
 import { FavListComponent } from './components/fav-list/fav-list.component';
 import { FavLisSerieItemComponent } from './components/fav-lis-serie-item/fav-lis-serie-item.component';
+import { FavListMovieItemComponent } from './components/fav-list-movie-item/fav-list-movie-item.component';
+import { DeleteFavBotonComponent } from './components/delete-fav-boton/delete-fav-boton.component';
 
 
 @NgModule({
@@ -83,7 +85,9 @@ import { FavLisSerieItemComponent } from './components/fav-lis-serie-item/fav-li
     UserPageComponent,
     WatchlistSerieItemComponent,
     FavListComponent,
-    FavLisSerieItemComponent
+    FavLisSerieItemComponent,
+    FavListMovieItemComponent,
+    DeleteFavBotonComponent
   ],
   imports: [
     BrowserModule,

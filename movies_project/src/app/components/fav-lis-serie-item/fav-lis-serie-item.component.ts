@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment.development';
 })
 export class FavLisSerieItemComponent {
   @Input() serie!: FavSeries;
-
+  type: string = 'tv';
 
   setPosterSerie(): string {
     return `${environment.posterImageBaseUrl}${this.serie.poster_path}`
