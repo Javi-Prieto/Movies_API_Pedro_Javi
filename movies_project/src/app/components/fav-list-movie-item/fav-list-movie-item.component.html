@@ -1,0 +1,7 @@
+<app-delete-fav-boton [id]="movie.id" [type]="type"></app-delete-fav-boton>
+<div class="card container" style="width: 18rem; height: 450px; cursor: pointer;" [routerLink]="['/movies', movie.id]">
+    <img [src]="setPosterMovie()" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">{{movie.title}}</h5>
+    </div>
+</div>
