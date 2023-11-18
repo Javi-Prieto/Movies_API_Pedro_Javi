@@ -1,0 +1,9 @@
+<div class="row">
+    <app-fav-lis-serie-item *ngFor="let serie of serieList" [serie]="serie" class="col-3"></app-fav-lis-serie-item>
+
+</div>
+
+<nav class="d-flex justify-content-center mt-2">
+    <ngb-pagination [collectionSize]="totalElements" [pageSize]="20" [maxSize]="3" [rotate]="true" [(page)]="numPage"
+        (pageChange)="lodPage()" class="align-self-centers" aria-label="Default pagination"></ngb-pagination>
+</nav>

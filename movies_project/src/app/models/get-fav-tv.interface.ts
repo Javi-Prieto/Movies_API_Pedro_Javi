@@ -2,12 +2,12 @@
 
 export interface FabSeriesResponse {
     page: number;
-    results: Result[];
+    results: FavSeries[];
     total_pages: number;
     total_results: number;
 }
 
-export interface Result {
+export interface FavSeries {
     adult: boolean;
     backdrop_path: string;
     genre_ids: number[];
