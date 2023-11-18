@@ -48,6 +48,8 @@ import { FavListMovieItemComponent } from './components/fav-list-movie-item/fav-
 import { DeleteFavBotonComponent } from './components/delete-fav-boton/delete-fav-boton.component';
 
 import { ValorationItemComponent } from './components/valoration-item/valoration-item.component';
+import { SerieRatedListComponent } from './components/serie-rated-list/serie-rated-list.component';
+import { SerieRatedItemComponent } from './components/serie-rated-item/serie-rated-item.component';
 
 
 @NgModule({
@@ -93,7 +95,9 @@ import { ValorationItemComponent } from './components/valoration-item/valoration
     FavListMovieItemComponent,
     DeleteFavBotonComponent,
 
-    ValorationItemComponent
+    ValorationItemComponent,
+      SerieRatedListComponent,
+      SerieRatedItemComponent
 
   ],
   imports: [
