@@ -9,6 +9,7 @@ import { MovieTrailersResponse } from '../models/movie-trailers.interface';
 import { MovieImagesResponse } from '../models/movie-images.interface';
 import { MoviePlayNowResponse } from '../models/movie-playNow.interface';
 import { MovieGenresResponse } from '../models/genres-movies.interface';
+import { RatingResponse } from '../models/rating.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -50,5 +51,21 @@ export class MovieService {
   }
   getMovieGenres():Observable<MovieGenresResponse>{
     return this.http.get<MovieGenresResponse>(`${environment.baseUrl}/genre/movie/list?${environment.apiKey}`);
+  }
+
+  addRating(id:number, value:number):Observable<RatingResponse>{
+    return this.http.post<RatingResponse>(`${environment.baseUrl}/movie/${id}/rating?session_id=${localStorage.getItem('SESSION_ID')}`,{
+         value: value
+    },{
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${environment.tmdbToken}`
+      }
+    }
+    );
+  }
+
+  deleteRating(id:number):Observable<RatingResponse>{
+    return this.http.delete<RatingResponse>(`${environment.baseUrl}/movie/${id}/rating?session_id=${localStorage.getItem('SESSION_ID')}&${environment.apiKey}`);
   }
 }
