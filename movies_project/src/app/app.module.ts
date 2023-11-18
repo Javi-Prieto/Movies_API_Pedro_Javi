@@ -43,6 +43,7 @@ import { AccountService } from './services/account.service';
 import { WatchlistSerieItemComponent } from './components/watchlist-serie-item/watchlist-serie-item.component';
 import { FavListComponent } from './components/fav-list/fav-list.component';
 import { FavLisSerieItemComponent } from './components/fav-lis-serie-item/fav-lis-serie-item.component';
+import { ValorationItemComponent } from './components/valoration-item/valoration-item.component';
 
 
 @NgModule({
@@ -83,7 +84,8 @@ import { FavLisSerieItemComponent } from './components/fav-lis-serie-item/fav-li
     UserPageComponent,
     WatchlistSerieItemComponent,
     FavListComponent,
-    FavLisSerieItemComponent
+    FavLisSerieItemComponent,
+    ValorationItemComponent
   ],
   imports: [
     BrowserModule,

@@ -16,6 +16,7 @@
                     <app-rating-item [average]="serie.vote_average"></app-rating-item>
                     <app-boton-fav [type]="type" [id]="serie.id" *ngIf="isRegisted()"></app-boton-fav>
                     <app-watchlist [id]="serie.id" [type]="type.toString()" class="px-2 w-25"></app-watchlist>
+                    <app-valoration-item [id]="serie.id" [isAMovie]="false"></app-valoration-item>
                 </div>
                 <p>{{serie.first_air_date}}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                         fill="currentColor" class="bi bi-calendar ms-2" viewBox="0 0 16 16">
