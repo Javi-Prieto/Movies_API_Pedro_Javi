@@ -41,6 +41,8 @@ import { WatchlistMovieItemComponent } from './components/watchlist-movie-item/w
 import { WatchlistDeleteButtonComponent } from './components/watchlist-delete-button/watchlist-delete-button.component';
 import { AccountService } from './services/account.service';
 import { WatchlistSerieItemComponent } from './components/watchlist-serie-item/watchlist-serie-item.component';
+import { FavListComponent } from './components/fav-list/fav-list.component';
+import { FavLisSerieItemComponent } from './components/fav-lis-serie-item/fav-lis-serie-item.component';
 
 
 @NgModule({
@@ -79,7 +81,9 @@ import { WatchlistSerieItemComponent } from './components/watchlist-serie-item/w
     WatchlistMovieItemComponent,
     WatchlistDeleteButtonComponent,
     UserPageComponent,
-    WatchlistSerieItemComponent
+    WatchlistSerieItemComponent,
+    FavListComponent,
+    FavLisSerieItemComponent
   ],
   imports: [
     BrowserModule,

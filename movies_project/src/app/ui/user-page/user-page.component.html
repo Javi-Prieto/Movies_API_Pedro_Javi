@@ -3,13 +3,13 @@
         <div class="col-2">
             <img [src]="getUserAvatar()" alt="">
             <h1 class="h1-display-2 align-items-center">
-                    {{userAcc.username}}
+                {{userAcc.username}}
             </h1>
         </div>
         <div class="col-10">
             <div class="d-flex justify-content-around">
                 <div ngbDropdown class="d-inline-block">
-                    <button type="button" class="btn btn-lg btn-secondary" id="dropdownBasic1" ngbDropdownToggle >
+                    <button type="button" class="btn btn-lg btn-secondary" id="dropdownBasic1" ngbDropdownToggle>
                         WatchList
                     </button>
                     <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
@@ -25,11 +25,13 @@
                         <button ngbDropdownItem (click)="onMovieFavClicked()">Movies</button>
                         <button ngbDropdownItem (click)="onSerieFavClicked()">Series</button>
                     </div>
-                </div>    
+                </div>
             </div>
             <hr>
             <app-watchlist-list [movie]="true" [serie]="false" *ngIf="watchListMovie"></app-watchlist-list>
             <app-watchlist-list [serie]="true" [movie]="false" *ngIf="watchListSerie"></app-watchlist-list>
+            <app-fav-list [serie]="true" *ngIf="favouriteSerie"></app-fav-list>
         </div>
+
     </div>
 </div>

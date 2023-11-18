@@ -12,9 +12,10 @@
                     <span *ngFor="let genre of serie?.genres" class="badge rounded-pill text-bg-secondary m-1">
                         {{genre.name}} </span>
                 </div>
-                <div>
-                    <app-boton-fav [type]="type" [id]="serie.id" *ngIf="isRegisted()"></app-boton-fav>
+                <div class="d-flex align-items-center">
                     <app-rating-item [average]="serie.vote_average"></app-rating-item>
+                    <app-boton-fav [type]="type" [id]="serie.id" *ngIf="isRegisted()"></app-boton-fav>
+                    <app-watchlist [id]="serie.id" [type]="type.toString()" class="px-2 w-25"></app-watchlist>
                 </div>
                 <p>{{serie.first_air_date}}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                         fill="currentColor" class="bi bi-calendar ms-2" viewBox="0 0 16 16">
