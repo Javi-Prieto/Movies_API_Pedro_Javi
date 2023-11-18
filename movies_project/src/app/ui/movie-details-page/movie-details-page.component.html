@@ -25,7 +25,14 @@
                     <br>
                     <h2 class="h2 fw-bold">Overview</h2>
                     <p class="fs-5 m-0">{{movie?.overview}}</p>
-                    <p class="text-white-50 fst-italic fs-3" >"{{movie?.tagline}}"</p>
+                    <p class="text-white-50 fst-italic fs-3 mb-1" >"{{movie?.tagline}}"</p>
+                    <h2 class="h2 fw-bold">Rate the Movie</h2>
+                    <div class="d-flex justify-content-between">
+                        <app-valoration-item [isAMovie]="true" [id]="movieId"></app-valoration-item>
+                        <app-watchlist [id]="movie!.id" [type]="'movie'" ></app-watchlist>
+                        <app-boton-fav [id]="movie!.id" [type]="'movie'"></app-boton-fav>
+                    </div>
+                    
                 </div>
                 <div class="col-12" *ngIf="movie?.belongs_to_collection">
                     <h1 class="h1 fw-bold">Collection</h1>

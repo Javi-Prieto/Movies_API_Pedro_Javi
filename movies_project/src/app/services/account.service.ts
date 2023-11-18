@@ -8,7 +8,12 @@ import { MovieWatchListResponse } from '../models/movie-watchlist.interface';
 import { FabSeriesResponse } from '../models/get-fav-tv.interface';
 import { Injectable } from '@angular/core';
 import { WatchListSerieResponse } from '../models/serie-watchlist.interface';
+
 import { FavMoviesResponse } from '../models/get-fav-movies.interface';
+
+import { RatedMoviesResponse } from '../models/rated-movie.interface';
+import { RatedSerieResponse } from '../models/rated-serie.interface';
+
 
 @Injectable({
   providedIn: 'root'
@@ -132,6 +137,7 @@ export class AccountService {
     );
   }
 
+
   getFavouriteMovies(): Observable<FavMoviesResponse> {
     let session_id = localStorage.getItem('SESSION_ID')
     let user_id = localStorage.getItem('USER_ID');
@@ -143,6 +149,19 @@ export class AccountService {
       });
   }
 
+  getRatedMovies(): Observable<RatedMoviesResponse> {
+    let session_id = localStorage.getItem('SESSION_ID')
+    let user_id = localStorage.getItem('USER_ID');
+    return this.http.get<RatedMoviesResponse>(`${environment.baseUrl}/account/${user_id}/rated/movies?&session_id=${session_id}`,
+
+      {
+        headers: {
+          'Authorization': `Bearer ${environment.tmdbToken}`
+        }
+
+      });
+  }
+
   getFavouriteMoviesPag(numPage: number): Observable<FavMoviesResponse> {
     let session_id = localStorage.getItem('SESSION_ID')
     let user_id = localStorage.getItem('USER_ID');
@@ -151,6 +170,19 @@ export class AccountService {
         headers: {
           'Authorization': `Bearer ${environment.tmdbToken}`
         }
+      });
+  }
+
+
+  getRatedSeries(): Observable<RatedSerieResponse> {
+    let session_id = localStorage.getItem('SESSION_ID')
+    let user_id = localStorage.getItem('USER_ID');
+    return this.http.get<RatedSerieResponse>(`${environment.baseUrl}/account/${user_id}/rated/tv?&session_id=${session_id}`,
+      {
+        headers: {
+          'Authorization': `Bearer ${environment.tmdbToken}`
+        }
+
       });
   }
 
