@@ -1,0 +1,21 @@
+.index-overlay {
+    position: absolute;
+    top: 0;
+    left: -4rem;
+    padding: 0.5rem;
+    font-size: 20rem;
+    font-weight: bold;
+    color: rgba(80, 0, 185, 0.7);
+}
+
+.card {
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: black;
+    border: none;
+}
+
+.card:hover {
+    background-color: rgba(80, 0, 185, 0.7);
+    color: aliceblue;
+}

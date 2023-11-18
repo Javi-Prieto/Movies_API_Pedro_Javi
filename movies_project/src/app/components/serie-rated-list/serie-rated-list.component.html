@@ -1,0 +1,7 @@
+<div class="list d-flex justify-content-center">
+    <div class="list-group list-group-horizontal position-relative overflow-auto w-75 custom-scrollbar"
+        onscroll="handleScroll(this)">
+        <app-serie-rated-item *ngFor="let s of ratedSerieList; index as i" [serieRated]="s"
+            [index]="i"></app-serie-rated-item>
+    </div>
+</div>
