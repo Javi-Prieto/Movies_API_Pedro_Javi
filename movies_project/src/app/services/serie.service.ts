@@ -7,6 +7,7 @@ import { SerieDetailResponse } from '../models/serie-details.interface';
 import { ReviewResponse } from '../models/review-list.interface';
 import { RatingResponse } from '../models/rating.interface';
 import { RatedSerieResponse } from '../models/rated-serie.interface';
+import { GenreSerieResponse } from '../models/genres-serie.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class SerieService {
 
   constructor(private http: HttpClient) { }
 
-  getPopularFilmList(numPage: number): Observable<SeriePopularResponse> {
+  getPopularSerieList(numPage: number): Observable<SeriePopularResponse> {
     return this.http.get<SeriePopularResponse>(`${environment.baseUrl}/tv/popular?${environment.apiKey}&page=${numPage}`);
   }
 
@@ -49,5 +50,9 @@ export class SerieService {
 
   getRatedSerieList(): Observable<RatedSerieResponse> {
     return this.http.get<RatedSerieResponse>(`${environment.baseUrl}/tv/top_rated?${environment.apiKey}`);
+  }
+
+  getSerieGenres(): Observable<GenreSerieResponse> {
+    return this.http.get<GenreSerieResponse>(`${environment.baseUrl}/genre/tv/list?${environment.apiKey}`);
   }
 }
